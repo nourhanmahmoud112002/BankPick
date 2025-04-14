@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     fontWeight: '600',
+    fontFamily:'Poppins-Regular',
     color: 'white',
     textAlign: 'center',
     lineHeight: 24,

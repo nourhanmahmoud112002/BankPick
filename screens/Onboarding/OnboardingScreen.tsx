@@ -1,7 +1,6 @@
 import {Animated, FlatList, StyleSheet, View} from 'react-native';
 import {OnboardingList} from '../../utils/Constants';
 import OnboardingItem from '../../components/OnboardingItem';
-import {AppColors, isDarkMode} from '../../utils/AppColors';
 import {useRef, useState} from 'react';
 import AppButton from '../../components/AppButton';
 
@@ -22,7 +21,7 @@ function OnboardingScreen({navigation}: any): React.JSX.Element {
     if (nextIndex < OnboardingList.length) {
       slideRef.current?.scrollToIndex({index: nextIndex, animated: true});
     } else {
-      navigation.replace('Home');
+      navigation.replace('SignIn');
     }
   };
 
@@ -66,7 +65,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: isDarkMode ? AppColors.dark : 'white',
   },
   innerContainer: {
     flex: 3,

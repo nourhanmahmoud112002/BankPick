@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 26,
     fontWeight: '600',
+    fontFamily:'Poppins-Regular',
     color: isDarkMode ? 'white' : 'black',
     textAlign: 'center',
     marginBottom: 10,
@@ -47,6 +48,7 @@ const styles = StyleSheet.create({
   content: {
     fontSize: 14,
     fontWeight: '400',
+    fontFamily:'Poppins-Regular',
     textAlign: 'center',
     lineHeight: 24,
     color: AppColors.gray,

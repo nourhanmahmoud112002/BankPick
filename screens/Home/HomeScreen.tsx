@@ -1,6 +1,6 @@
-import { Text } from "react-native";
+import {Text} from 'react-native';
 
-function HomeScreen():React.JSX.Element{
-    return <Text>Home</Text>
+function HomeScreen(): React.JSX.Element {
+  return <Text>Home</Text>;
 }
 export default HomeScreen;

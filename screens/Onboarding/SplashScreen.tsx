@@ -1,5 +1,5 @@
 import {Animated, StyleSheet, View} from 'react-native';
-import { AppColors, isDarkMode} from '../../utils/AppColors';
+import {  isDarkMode} from '../../utils/AppColors';
 import {useRef, useEffect} from 'react';
 function SplashScreen({navigation}:any): React.JSX.Element {
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -47,7 +47,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: isDarkMode ? AppColors.dark : 'white',
   },
   image: {
     width: 80,
@@ -58,5 +57,6 @@ const styles = StyleSheet.create({
     fontSize: 35,
     fontWeight: '600',
     color: isDarkMode ? 'white' : 'black',
+    fontFamily:'Poppins-Regular',
   },
 });
