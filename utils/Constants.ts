@@ -21,3 +21,5 @@ export const OnboardingList = [
       'Built-in Fingerprint, face recognition and more, keeping you completely safe',
   },
 ];
+
+

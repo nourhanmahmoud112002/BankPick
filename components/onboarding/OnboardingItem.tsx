@@ -1,7 +1,7 @@
 import {View, Text, StyleSheet, Image, useWindowDimensions} from 'react-native';
-import {AppColors, isDarkMode} from '../utils/AppColors';
-import Paginator from './Paginator';
-import {OnboardingList} from '../utils/Constants';
+import {AppColors, isDarkMode} from '../../utils/AppColors';
+import Paginator from '../onboarding/Paginator';
+import {OnboardingList} from '../../utils/Constants';
 
 function OnboardingItem({item, scrollX}: any): React.JSX.Element {
   const {width, height} = useWindowDimensions();

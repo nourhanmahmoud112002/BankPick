@@ -1,6 +1,6 @@
 import {Animated, FlatList, StyleSheet, View} from 'react-native';
 import {OnboardingList} from '../../utils/Constants';
-import OnboardingItem from '../../components/OnboardingItem';
+import OnboardingItem from '../../components/onboarding/OnboardingItem';
 import {useRef, useState} from 'react';
 import AppButton from '../../components/AppButton';
 

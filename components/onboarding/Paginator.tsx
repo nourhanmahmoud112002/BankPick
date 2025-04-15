@@ -1,5 +1,5 @@
 import {Animated, StyleSheet, useWindowDimensions, View} from 'react-native';
-import {AppColors} from '../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
 type PaginatorProps = {
   data: any[]; // Or replace `any[]` with the appropriate type for your data
   scrollX: Animated.Value;
