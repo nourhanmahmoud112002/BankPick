@@ -13,7 +13,7 @@ function SignInScreen({navigation}: any): React.JSX.Element {
       <InputField label="Email Address" leftIcon="email" />
       <InputField label="Password" leftIcon="password" rightIcon="eye" />
       <View style={styles.button}>
-        <AppButton onPress={() => navigation.navigate('Home')}>
+        <AppButton onPress={() => navigation.navigate('HomeWithBottomTab')}>
           Sign In
         </AppButton>
       </View>

@@ -7,6 +7,7 @@ import SignInScreen from './screens/Auth/SignIn';
 import {AppColors, isDarkMode} from './utils/AppColors';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import SignUpScreen from './screens/Auth/SignUp';
+import HomeWithBottomTabs from './screens/Home/HomewithBottomTabs';
 
 function App(): React.JSX.Element {
   const Stack = createNativeStackNavigator();
@@ -24,6 +25,7 @@ function App(): React.JSX.Element {
           <Stack.Screen name="Onboarding" component={OnboardingScreen} />
           <Stack.Screen name="SignIn" component={SignInScreen} />
           <Stack.Screen name="SignUp" component={SignUpScreen} />
+          <Stack.Screen name="HomeWithBottomTab" component={HomeWithBottomTabs} />
           <Stack.Screen name="Home" component={HomeScreen} />
         </Stack.Navigator>
       </NavigationContainer>
