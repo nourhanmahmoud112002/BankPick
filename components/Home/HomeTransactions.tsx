@@ -1,7 +1,7 @@
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {AppColors, isDarkMode} from '../../utils/AppColors';
-import HomeTransItem from './HomeTransItem';
 import {TransactionsList} from '../../utils/Constants';
+import HomeTransactionsList from './HomeTransactionsList';
 
 function HomeTransactions(): React.JSX.Element {
   return (
@@ -11,11 +11,7 @@ function HomeTransactions(): React.JSX.Element {
         <Text style={styles.transTitle}>Transaction</Text>
         <Text style={styles.seeAllText}>See All</Text>
       </View>
-      <View style={styles.tranContainer}>
-        {TransactionsList.map((item, index) => (
-          <HomeTransItem key={index} item={item} />
-        ))}
-      </View>
+     <HomeTransactionsList data={TransactionsList}/>
     </View>
    </ScrollView>
   );
@@ -42,8 +38,5 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     fontFamily: 'Poppins-Regular',
     color: AppColors.primaryColor,
-  },
-  tranContainer: {
-    marginTop: 20,
   },
 });
