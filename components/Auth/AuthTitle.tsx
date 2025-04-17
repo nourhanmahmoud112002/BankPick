@@ -12,5 +12,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     color: isDarkMode ? 'white' : 'black',
     marginBottom:38,
+    marginTop:53,
   },
 });

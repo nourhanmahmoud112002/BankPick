@@ -31,6 +31,7 @@ export default SignInScreen;
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 25,
+    marginTop: 54,
   },
   button: {
     marginTop: 19,

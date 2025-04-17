@@ -48,6 +48,7 @@ export default SignUpScreen;
 const styles = StyleSheet.create({
   flex: {
     flex: 1,
+    marginTop: 30,
   },
   scrollContainer: {
     flexGrow: 1,

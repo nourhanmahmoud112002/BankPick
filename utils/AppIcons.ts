@@ -28,4 +28,7 @@ export const Icons: Record<string, any> = {
     : require('../assets/images/downloandark.png'),
   spotify: require('../assets/images/spotify.png'),
   grocery: require('../assets/images/grocery.png'),
+  add: isDarkMode
+    ? require('../assets/images/addLight.png')
+    : require('../assets/images/addDark.png'),
 };
