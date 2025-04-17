@@ -1,37 +1,31 @@
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {AppColors, isDarkMode} from '../../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
 import {TransactionsList} from '../../utils/Constants';
 import HomeTransactionsList from './HomeTransactionsList';
+import SectionTitle from '../SectionTitle';
 
 function HomeTransactions(): React.JSX.Element {
   return (
-   <ScrollView>
-     <View style={styles.container}>
-      <View style={styles.titleconstainer}>
-        <Text style={styles.transTitle}>Transaction</Text>
-        <Text style={styles.seeAllText}>See All</Text>
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.titleconstainer}>
+          <SectionTitle title="Transaction" />
+          <Text style={styles.seeAllText}>See All</Text>
+        </View>
+        <HomeTransactionsList data={TransactionsList} />
       </View>
-     <HomeTransactionsList data={TransactionsList}/>
-    </View>
-   </ScrollView>
+    </ScrollView>
   );
 }
 
 export default HomeTransactions;
 const styles = StyleSheet.create({
-
   container: {
     marginTop: 28,
   },
   titleconstainer: {
     justifyContent: 'space-between',
     flexDirection: 'row',
-  },
-  transTitle: {
-    fontSize: 18,
-    fontWeight: '500',
-    fontFamily: 'Poppins-Regular',
-    color: isDarkMode ? 'white' : 'black',
   },
   seeAllText: {
     fontSize: 14,

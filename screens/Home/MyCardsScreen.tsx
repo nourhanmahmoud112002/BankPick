@@ -2,7 +2,7 @@ import {StyleSheet, View} from 'react-native';
 import {isDarkMode, AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
 import {Icons} from '../../utils/AppIcons';
-import CardsContent from '../../components/Home/CardsContent';
+import CardsContent from '../../components/MyCards/CardsContent';
 
 function MyCardsScreen(): React.JSX.Element {
   return (

@@ -20,7 +20,7 @@ function HomeWithBottomTabs(): React.JSX.Element {
             ? AppColors.blueGray
             : AppColors.lighterGray,
           borderTopWidth: 0,
-          height: 86,
+          height: 80,
           paddingTop: 7,
         },
         tabBarActiveTintColor: AppColors.primaryColor,
@@ -36,7 +36,7 @@ function HomeWithBottomTabs(): React.JSX.Element {
         options={{
           tabBarIcon: ({color, size}) => (
             <HomeIcon width={size} height={size} color={color} />
-          ),
+          ) as any,
         }}
       />
       <Tab.Screen
@@ -45,7 +45,7 @@ function HomeWithBottomTabs(): React.JSX.Element {
         options={{
           tabBarIcon: ({color, size}) => (
             <CardIcon width={size} height={size} color={color} />
-          ),
+          ) as any,
         }}
       />
       <Tab.Screen
@@ -54,7 +54,7 @@ function HomeWithBottomTabs(): React.JSX.Element {
         options={{
           tabBarIcon: ({color, size}) => (
             <StatIcon width={size} height={size} color={color} />
-          ),
+          ) as any,
         }}
       />
       <Tab.Screen
@@ -63,7 +63,7 @@ function HomeWithBottomTabs(): React.JSX.Element {
         options={{
           tabBarIcon: ({color, size}) => (
             <SettingsIcon width={size} height={size} color={color} />
-          ),
+          ) as any,
         }}
       />
     </Tab.Navigator>

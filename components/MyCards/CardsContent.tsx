@@ -1,7 +1,8 @@
 import React from 'react';
 import {ImageBackground, StyleSheet, View} from 'react-native';
-import HomeTransactionsList from './HomeTransactionsList';
+import HomeTransactionsList from '../Home/HomeTransactionsList';
 import {TransactionsList} from '../../utils/Constants';
+import MonthySpendingLimit from './MonthlySpendingLimit';
 
 function CardsContent(): React.JSX.Element {
   return (
@@ -14,6 +15,7 @@ function CardsContent(): React.JSX.Element {
         <HomeTransactionsList
           data={TransactionsList.filter(item => item.id !== '3')}
         />
+        <MonthySpendingLimit/>
       </View>
     </ImageBackground>
   );
@@ -30,6 +32,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     width: '100%',
-    paddingTop: 180,
+    paddingTop: 320,
+
   },
 });
