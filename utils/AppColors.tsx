@@ -1,3 +1,5 @@
+// import useMode from "../hooks/useMode";
+
 export const AppColors = {
   primaryColor: '#0066FF',
   dark: '#161622',
@@ -9,5 +11,6 @@ export const AppColors = {
   blueGray: '#27273A',
   LavenderGray: '#8B8B94',
   semiTransparentWhite: '#FFFFFF80',
+  green:'#1D9D01',
 };
 export let isDarkMode = true;

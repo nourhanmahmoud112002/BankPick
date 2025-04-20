@@ -8,11 +8,15 @@ import {AppColors, isDarkMode} from './utils/AppColors';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import SignUpScreen from './screens/Auth/SignUp';
 import HomeWithBottomTabs from './screens/Home/HomewithBottomTabs';
+import ProfileScreen from './screens/Settings/ProfileScreen';
+import SettingsScreen from './screens/Settings/SettingsScreen';
+// import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 function App(): React.JSX.Element {
   const Stack = createNativeStackNavigator();
   return (
-    <SafeAreaProvider>
+    // <GestureHandlerRootView style={{flex: 1}}>
+       <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
@@ -27,9 +31,12 @@ function App(): React.JSX.Element {
           <Stack.Screen name="SignUp" component={SignUpScreen} />
           <Stack.Screen name="HomeWithBottomTab" component={HomeWithBottomTabs} />
           <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Settings" component={SettingsScreen} />
+          <Stack.Screen name="Profile" component={ProfileScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
+    // </GestureHandlerRootView>
   );
 }
 

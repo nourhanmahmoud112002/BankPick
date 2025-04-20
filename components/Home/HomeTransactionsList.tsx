@@ -6,7 +6,7 @@ type TransactionItem = {
   title: string;
   money: string;
   category: string;
-  iconName: string;
+  iconName: any;
 };
 type dataType = {
   data: TransactionItem[];

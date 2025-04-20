@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     borderWidth: 1,
     borderColor: '#232533',
-    color: isDarkMode ? '#1E1E2D' : '#F4F4F4',
+    backgroundColor: isDarkMode ? '#1E1E2D' : '#F4F4F4',
   },
   text:{
     color: isDarkMode ? 'white' : 'black',

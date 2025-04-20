@@ -31,4 +31,21 @@ export const Icons: Record<string, any> = {
   add: isDarkMode
     ? require('../assets/images/addLight.png')
     : require('../assets/images/addDark.png'),
+  notification: isDarkMode
+    ? require('../assets/images/NotificationLight.png')
+    : require('../assets/images/NotificationDark.png'),
+  logOut: isDarkMode
+    ? require('../assets/images/LogoutLight.png')
+    : require('../assets/images/LogoutDark.png'),
+  editUser: isDarkMode
+    ? require('../assets/images/EditUserLight.png')
+    : require('../assets/images/EditUserDark.png'),
+  nextArrow: require('../assets/images/nextArrow.png'),
+  user:require('../assets/images/user.png'),
+  payment:require('../assets/images/payment.png'),
+  paymentEdit:require('../assets/images/paymentEdit.png'),
+ chat:require('../assets/images/chat.png'),
+ address:require('../assets/images/address.png'),
+ settings:require('../assets/images/settings.png'),
+ grayNotification:require('../assets/images/grayNotification.png'),
 };
