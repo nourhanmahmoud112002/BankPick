@@ -10,6 +10,7 @@ function MyCardsScreen({navigation}: any): React.JSX.Element {
       <AppBar
         title="My Cards"
         icon={Icons.add}
+        imageWidth={15}
         onPress={() => navigation.navigate('AddNewCard')}
       />
       <CardsContent />

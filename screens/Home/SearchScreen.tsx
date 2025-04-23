@@ -2,15 +2,21 @@ import {StyleSheet, View} from 'react-native';
 import {isDarkMode, AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
 import {Icons} from '../../utils/AppIcons';
+import SearchInputText from '../../components/Home/SearchInputText';
+import HomeTransactionsList from '../../components/Home/HomeTransactionsList';
+import { TransactionsList } from '../../utils/Constants';
 
 function SearchScreen({navigation}: any): React.JSX.Element {
   return (
     <View style={styles.container}>
       <AppBar
         title="Search"
-        icon={Icons.add}
-        onPress={() => navigation.navigate('AddNewCard')}
+        icon={Icons.exit}
+        imageWidth={10}
+        onPress={() => navigation.goBack()}
       />
+      <SearchInputText/>
+      <HomeTransactionsList data={TransactionsList}/>
     </View>
   );
 }

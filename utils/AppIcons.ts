@@ -54,4 +54,9 @@ export const Icons: Record<string, any> = {
  creditCard:require('../assets/images/creditCard.png'),
  creditLogo:require('../assets/images/creditLogo.png'),
  allCards:require('../assets/images/allCardss.png'),
+ exit:isDarkMode
+ ? require('../assets/images/exitLight.png')
+ : require('../assets/images/exitDark.png'),
+ grayExit:require('../assets/images/grayExit.png'),
+ graySearch:require('../assets/images/graySearch.png'),
 };

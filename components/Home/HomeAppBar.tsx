@@ -3,8 +3,10 @@ import CircularImage from '../CircularImage';
 import {AppColors, isDarkMode} from '../../utils/AppColors';
 import Icon from '../Icon';
 import {Icons} from '../../utils/AppIcons';
+import {useNavigation} from '@react-navigation/native';
 
 function HomeAppBar(): React.JSX.Element {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <CircularImage image={require('../../assets/images/userImage.png')} />
@@ -13,7 +15,11 @@ function HomeAppBar(): React.JSX.Element {
         <Text style={styles.nameText}>Tanya Myroniuk</Text>
       </View>
       <View style={styles.searchContainer}>
-        <Icon width={50} icon={Icons.search} />
+        <Icon
+          width={50}
+          icon={Icons.search}
+          onPress={() => navigation.navigate('Search' as never)}
+        />
       </View>
     </View>
   );

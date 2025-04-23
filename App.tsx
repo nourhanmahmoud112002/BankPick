@@ -13,6 +13,8 @@ import SettingsScreen from './screens/Settings/SettingsScreen';
 import EditProfile from './screens/Settings/EditProfile';
 import AddNewCardScreen from './screens/Home/AddNewCardScreen';
 import AllCardsScreen from './screens/Home/AllCardsScreen';
+import SearchScreen from './screens/Home/SearchScreen';
+import SendMoneyScreen from './screens/Home/SendMoneyScreen';
 // import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 function App(): React.JSX.Element {
@@ -39,6 +41,8 @@ function App(): React.JSX.Element {
           <Stack.Screen name="EditProfile" component={EditProfile} />
           <Stack.Screen name="AddNewCard" component={AddNewCardScreen} />
           <Stack.Screen name="AllCards" component={AllCardsScreen} />
+          <Stack.Screen name="Search" component={SearchScreen} />
+          <Stack.Screen name="SendMoney" component={SendMoneyScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

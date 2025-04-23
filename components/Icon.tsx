@@ -1,7 +1,7 @@
 import {Image, Pressable, StyleSheet} from 'react-native';
 import {AppColors, isDarkMode} from '../utils/AppColors';
 
-function Icon({width, icon, onPress}: any): React.JSX.Element {
+function Icon({width, icon, onPress,imageWidth}: any): React.JSX.Element {
   return (
     <Pressable
       onPress={onPress}
@@ -17,7 +17,7 @@ function Icon({width, icon, onPress}: any): React.JSX.Element {
             : AppColors.lighterGray,
         },
       ]}>
-      <Image source={icon} style={styles.image} />
+      <Image source={icon} style={[styles.image,{width:imageWidth || 20,height:imageWidth || 20}]} />
     </Pressable>
   );
 }
@@ -25,8 +25,6 @@ export default Icon;
 
 const styles = StyleSheet.create({
   image: {
-    width: 20,
-    height: 20,
     resizeMode: 'contain',
   },
   pressable: {

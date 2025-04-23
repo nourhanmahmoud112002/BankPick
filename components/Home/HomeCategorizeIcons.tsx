@@ -3,13 +3,19 @@ import React from 'react';
 import Icon from '../Icon';
 import {Icons} from '../../utils/AppIcons';
 import IconLabel from './IconLabel';
+import {useNavigation} from '@react-navigation/native';
 
 function HomeCategorizeIcons(): React.JSX.Element {
+  const navigation = useNavigation();
   return (
     <View style={[styles.container]}>
       <View style={styles.innerContainer}>
-        <Icon width={54} icon={Icons.arrowUp} />
-        <IconLabel text="Sent" />
+        <Icon
+          width={54}
+          icon={Icons.arrowUp}
+          onPress={() => navigation.navigate('SendMoney' as never)}
+        />
+        <IconLabel text="Send" />
       </View>
 
       <View style={styles.innerContainer}>
