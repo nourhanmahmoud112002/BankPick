@@ -3,13 +3,15 @@ import SettingsSubTitle from './SettingsSubTitle';
 import SettingsItem from './SettingsItem';
 import {AppColors} from '../../utils/AppColors';
 import DarkTheme from './DarkTheme';
+import { useNavigation } from '@react-navigation/native';
 
 function SecuritySettings(): React.JSX.Element {
+  const navigation = useNavigation();
   return (
     <View>
       <SettingsSubTitle title="Security" />
       <SettingsItem title="Change Password" />
-      <SettingsItem title="Privacy Policy" />
+      <SettingsItem title="Privacy Policy" onPress={() => navigation.navigate('TermsAndConditions' as never)} />
       <Text style={styles.text}>Choose what data you share with us</Text>
       <DarkTheme/>
     </View>
