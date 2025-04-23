@@ -41,6 +41,9 @@ export const Icons: Record<string, any> = {
     ? require('../assets/images/EditUserLight.png')
     : require('../assets/images/EditUserDark.png'),
   nextArrow: require('../assets/images/nextArrow.png'),
+  backIcon:isDarkMode
+  ? require('../assets/images/BackIconDark.png')
+  : require('../assets/images/BackIconLight.png'),
   user:require('../assets/images/user.png'),
   payment:require('../assets/images/payment.png'),
   paymentEdit:require('../assets/images/paymentEdit.png'),
@@ -48,4 +51,7 @@ export const Icons: Record<string, any> = {
  address:require('../assets/images/address.png'),
  settings:require('../assets/images/settings.png'),
  grayNotification:require('../assets/images/grayNotification.png'),
+ creditCard:require('../assets/images/creditCard.png'),
+ creditLogo:require('../assets/images/creditLogo.png'),
+ allCards:require('../assets/images/allCardss.png'),
 };

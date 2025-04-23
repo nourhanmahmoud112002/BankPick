@@ -22,7 +22,7 @@ function SignUpScreen({navigation}: any): React.JSX.Element {
         <View style={styles.container}>
           <BackIcon />
           <AuthTitle>Sign Up</AuthTitle>
-          <InputField label="Full Name" leftIcon="email" />
+          <InputField label="Full Name" leftIcon="user" />
           <InputField label="Phone Number" leftIcon="phone" />
           <InputField label="Email Address" leftIcon="email" />
           <InputField label="Password" leftIcon="password" rightIcon="eye" />

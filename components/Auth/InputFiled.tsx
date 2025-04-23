@@ -2,7 +2,7 @@ import {Image, StyleSheet, Text, TextInput, View} from 'react-native';
 import {AppColors, isDarkMode} from '../../utils/AppColors';
 import {Icons} from '../../utils/AppIcons';
 
-function InputField({label, rightIcon, leftIcon}: any): React.JSX.Element {
+function InputField({label, rightIcon, leftIcon,defaultValue}: any): React.JSX.Element {
   return (
     <View style={styles.container}>
       <Text style={styles.textLabel}>{label}</Text>
@@ -11,7 +11,7 @@ function InputField({label, rightIcon, leftIcon}: any): React.JSX.Element {
           source={Icons[leftIcon]}
           style={[styles.iconLeft, styles.icon]}
         />
-        <TextInput style={styles.textInput} />
+        <TextInput style={styles.textInput} value={defaultValue}/>
         {rightIcon && (
           <Image
             source={Icons[rightIcon]}

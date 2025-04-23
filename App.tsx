@@ -10,6 +10,9 @@ import SignUpScreen from './screens/Auth/SignUp';
 import HomeWithBottomTabs from './screens/Home/HomewithBottomTabs';
 import ProfileScreen from './screens/Settings/ProfileScreen';
 import SettingsScreen from './screens/Settings/SettingsScreen';
+import EditProfile from './screens/Settings/EditProfile';
+import AddNewCardScreen from './screens/Home/AddNewCardScreen';
+import AllCardsScreen from './screens/Home/AllCardsScreen';
 // import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 function App(): React.JSX.Element {
@@ -33,6 +36,9 @@ function App(): React.JSX.Element {
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Settings" component={SettingsScreen} />
           <Stack.Screen name="Profile" component={ProfileScreen} />
+          <Stack.Screen name="EditProfile" component={EditProfile} />
+          <Stack.Screen name="AddNewCard" component={AddNewCardScreen} />
+          <Stack.Screen name="AllCards" component={AllCardsScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

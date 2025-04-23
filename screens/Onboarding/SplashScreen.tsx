@@ -1,7 +1,7 @@
 import {Animated, StyleSheet, View} from 'react-native';
-import {  isDarkMode} from '../../utils/AppColors';
+import {isDarkMode} from '../../utils/AppColors';
 import {useRef, useEffect} from 'react';
-function SplashScreen({navigation}:any): React.JSX.Element {
+function SplashScreen({navigation}: any): React.JSX.Element {
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const scaleAnim = useRef(new Animated.Value(0.5)).current;
 
@@ -17,12 +17,12 @@ function SplashScreen({navigation}:any): React.JSX.Element {
         friction: 5,
         useNativeDriver: true,
       }),
-    ]).start(()=>{
-        setTimeout(() => {
-            navigation.replace('Onboarding');
-        },4000);
+    ]).start(() => {
+      setTimeout(() => {
+        navigation.replace('Onboarding');
+      }, 4000);
     });
-  }, [fadeAnim, scaleAnim,navigation]);
+  }, [fadeAnim, scaleAnim, navigation]);
 
   return (
     <View style={styles.screen}>
@@ -57,6 +57,6 @@ const styles = StyleSheet.create({
     fontSize: 35,
     fontWeight: '600',
     color: isDarkMode ? 'white' : 'black',
-    fontFamily:'Poppins-Regular',
+    fontFamily: 'Poppins-Regular',
   },
 });

@@ -5,17 +5,24 @@ import {Icons} from '../../utils/AppIcons';
 import Profile from '../../components/Settings/Profile';
 import SettingsItem from '../../components/Settings/SettingsItem';
 import NotificationIcon from '../../components/Settings/NotificationIcon';
-import {useNavigation} from '@react-navigation/native';
 
-function ProfileScreen(): React.JSX.Element {
-  const navigation = useNavigation();
+function ProfileScreen({navigation}: any): React.JSX.Element {
+  // const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <AppBar title="Profile" icon={Icons.editUser} />
+      <AppBar
+        title="Profile"
+        icon={Icons.editUser}
+        onPress={() => navigation.navigate('EditProfile')}
+      />
       <Profile title="Senior Designer" name="Tanya Myroniuk" />
       <SettingsItem title="Personal Information" preIcon={Icons.user} />
       <SettingsItem title="Payment Preferences" preIcon={Icons.payment} />
-      <SettingsItem title="Banks and Cards" preIcon={Icons.paymentEdit} />
+      <SettingsItem
+        title="Banks and Cards"
+        preIcon={Icons.paymentEdit}
+        onPress={() => navigation.navigate('AllCards')}
+      />
       <SettingsItem
         title="Notifications"
         preIcon={Icons.grayNotification}

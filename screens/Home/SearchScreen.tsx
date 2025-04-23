@@ -2,21 +2,19 @@ import {StyleSheet, View} from 'react-native';
 import {isDarkMode, AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
 import {Icons} from '../../utils/AppIcons';
-import CardsContent from '../../components/MyCards/CardsContent';
 
-function MyCardsScreen({navigation}: any): React.JSX.Element {
+function SearchScreen({navigation}: any): React.JSX.Element {
   return (
     <View style={styles.container}>
       <AppBar
-        title="My Cards"
+        title="Search"
         icon={Icons.add}
         onPress={() => navigation.navigate('AddNewCard')}
       />
-      <CardsContent />
     </View>
   );
 }
-export default MyCardsScreen;
+export default SearchScreen;
 
 const styles = StyleSheet.create({
   container: {

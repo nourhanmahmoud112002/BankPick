@@ -4,7 +4,7 @@ import MultiSlider from '@ptomasroos/react-native-multi-slider';
 import {AppColors, isDarkMode} from '../../utils/AppColors';
 
 const CustomRangeSlider = () => {
-  const [range, setRange] = useState([0]);
+  const [range, setRange] = useState([4600]);
 
   return (
     <View style={styles.container}>

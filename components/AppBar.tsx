@@ -2,12 +2,13 @@ import {StyleSheet, Text, View} from 'react-native';
 import BackIcon from './BackIcon';
 import {isDarkMode} from '../utils/AppColors';
 import Icon from './Icon';
-function AppBar({title,icon}:any): React.JSX.Element {
+function AppBar({title, icon, onPress}: any): React.JSX.Element {
   return (
     <View style={styles.constainer}>
       <BackIcon />
       <Text style={styles.text}>{title}</Text>
-      <Icon icon={icon} width={42} />
+      {icon && <Icon icon={icon} width={42} onPress={onPress} />}
+      {!icon && <View />}
     </View>
   );
 }
