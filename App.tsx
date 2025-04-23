@@ -16,6 +16,7 @@ import AllCardsScreen from './screens/Home/AllCardsScreen';
 import SearchScreen from './screens/Home/SearchScreen';
 import SendMoneyScreen from './screens/Home/SendMoneyScreen';
 import TermsAndConditionsScreen from './screens/Settings/TermsAndConditionsScreen';
+import ChangePasswordScreen from './screens/Settings/ChangePasswordScreen';
 // import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 function App(): React.JSX.Element {
@@ -45,6 +46,7 @@ function App(): React.JSX.Element {
           <Stack.Screen name="Search" component={SearchScreen} />
           <Stack.Screen name="SendMoney" component={SendMoneyScreen} />
           <Stack.Screen name="TermsAndConditions" component={TermsAndConditionsScreen} />
+          <Stack.Screen name="ChangePassword" component={ChangePasswordScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
