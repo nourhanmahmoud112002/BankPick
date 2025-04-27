@@ -3,14 +3,22 @@ import {AppColors} from '../../utils/AppColors';
 import {TransactionsList} from '../../utils/Constants';
 import HomeTransactionsList from './HomeTransactionsList';
 import SectionTitle from '../SectionTitle';
+import {useNavigation} from '@react-navigation/native';
 
 function HomeTransactions(): React.JSX.Element {
+  const navigation = useNavigation();
   return (
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.titleconstainer}>
           <SectionTitle title="Transaction" />
-          <Text style={styles.seeAllText}>See All</Text>
+          <Text
+            style={styles.seeAllText}
+            onPress={() => {
+              navigation.navigate('TransactionHistory' as never);
+            }}>
+            See All
+          </Text>
         </View>
         <HomeTransactionsList data={TransactionsList} />
       </View>

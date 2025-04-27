@@ -66,4 +66,7 @@ export const Icons: Record<string, any> = {
  Vietnam:require('../assets/images/flags/Vietnam.png'),
  Franch:require('../assets/images/flags/Franch.png'),
  checked:require('../assets/images/Checked.png'),
+ refresh: isDarkMode
+ ? require('../assets/images/refreshLight.png')
+ : require('../assets/images/refreshDark.png'),
 };

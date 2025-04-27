@@ -54,6 +54,64 @@ export const TransactionsList = [
     money: '- $ 88',
   },
 ];
+export const TransactionsHistoryList = [
+  {
+    id: '1',
+    iconName: Icons.apple,
+    title: 'Apple Store',
+    category: 'Entertainment',
+    money: '- $5,99',
+  },
+  {
+    id: '2',
+    iconName: Icons.spotify,
+    title: 'Spotify',
+    category: 'Music',
+    money: '- $12,99',
+  },
+  {
+    id: '3',
+    iconName: Icons.download,
+    title: 'Money Transfer',
+    category: 'Transaction',
+    money: '$300',
+  },
+  {
+    id: '4',
+    iconName: Icons.grocery,
+    title: 'Grocery',
+    category: 'Shopping',
+    money: '- $ 88',
+  },
+  {
+    id: '5',
+    iconName: Icons.apple,
+    title: 'Apple Store',
+    category: 'Entertainment',
+    money: '- $5,99',
+  },
+  {
+    id: '6',
+    iconName: Icons.spotify,
+    title: 'Spotify',
+    category: 'Music',
+    money: '- $12,99',
+  },
+  {
+    id: '7',
+    iconName: Icons.download,
+    title: 'Money Transfer',
+    category: 'Transaction',
+    money: '$300',
+  },
+  {
+    id: '8',
+    iconName: Icons.grocery,
+    title: 'Grocery',
+    category: 'Shopping',
+    money: '- $ 88',
+  },
+];
 export const TermsAndConditionsText = `
 export const TermsAndConditionsText="L15.1 Thank you for visiting our Application Doctor 24×7 and enrolling as a member.
 
