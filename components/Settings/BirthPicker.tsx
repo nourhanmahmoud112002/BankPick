@@ -1,10 +1,10 @@
 import {StyleSheet, Text, TextInput, View} from 'react-native';
 import {AppColors, isDarkMode} from '../../utils/AppColors';
 
-function BirthPicker(): React.JSX.Element {
+function BirthPicker({title}:any): React.JSX.Element {
   return (
     <View style={styles.container}>
-      <Text style={styles.textLabel}>Birth Date</Text>
+      <Text style={styles.textLabel}>{title}</Text>
       <View style={styles.innerContainer}>
         <View style={styles.inputContainer}>
           <TextInput style={styles.textInput} />

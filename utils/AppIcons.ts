@@ -69,4 +69,9 @@ export const Icons: Record<string, any> = {
  refresh: isDarkMode
  ? require('../assets/images/refreshLight.png')
  : require('../assets/images/refreshDark.png'),
+ alexa:require('../assets/images/users/Alexa.png'),
+ krishna:require('../assets/images/users/krishna.png'),
+ yakub:require('../assets/images/users/Yakub.png'),
+ ymilate:require('../assets/images/users/Ymilate.png'),
+ bluePlus:require('../assets/images/blueplus.png'),
 };

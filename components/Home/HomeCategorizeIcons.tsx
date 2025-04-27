@@ -19,7 +19,11 @@ function HomeCategorizeIcons(): React.JSX.Element {
       </View>
 
       <View style={styles.innerContainer}>
-        <Icon width={54} icon={Icons.arrowDown} />
+        <Icon
+          width={54}
+          icon={Icons.arrowDown}
+          onPress={() => navigation.navigate('ReceiveMoney' as never)}
+        />
         <IconLabel text="Receive" />
       </View>
       <View style={styles.innerContainer}>

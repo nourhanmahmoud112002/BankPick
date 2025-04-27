@@ -17,7 +17,7 @@ function EditProfile(): React.JSX.Element {
       <InputField label="Full Name" leftIcon="user" />
       <InputField label="Email Address" leftIcon="email" />
       <InputField label="Phone Number" leftIcon="phone" />
-      <BirthPicker/>
+      <BirthPicker title="Birth Date"/>
       <View style={styles.footerContainer}>
         <Text style={styles.footer}>Joined <Text style={styles.footerDate}>28 Jan 2021</Text></Text>
       </View>
