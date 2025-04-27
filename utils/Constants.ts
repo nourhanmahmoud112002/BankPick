@@ -62,3 +62,12 @@ export const TermsAndConditionsText="L15.1 Thank you for visiting our Applicatio
 15.3 In order to use the services of this Application, You are required to register yourself by verifying the authorised device. This Privacy Policy applies to your information that we collect and receive on and through Doctor 24×7; it does not apply to practices of businesses that we do not own or control or people we do not employ.
 
 15.4 By using this Application, you agree to the terms of this Privacy Policy."`;
+
+export const LanguagesList = [
+  {id: '1', name: 'English', Icon: Icons.English},
+  {id: '2', name: 'Australia', Icon: Icons.Australia},
+  {id: '3', name: 'Franch', Icon: Icons.Franch},
+  {id: '4', name: 'Spanish', Icon: Icons.Spanish},
+  {id: '5', name: 'America', Icon: Icons.America},
+  {id: '6', name: 'Vietnam', Icon: Icons.Vietnam},
+];

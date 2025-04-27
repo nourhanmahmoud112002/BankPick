@@ -2,16 +2,16 @@ import {Image, StyleSheet, TextInput, View} from 'react-native';
 import {AppColors, isDarkMode} from '../../utils/AppColors';
 import {Icons} from '../../utils/AppIcons';
 
-function SearchInputText(): React.JSX.Element {
+function SearchInputText({text,rightIcon}:any): React.JSX.Element {
   return (
     <View style={styles.container}>
       <Image source={Icons.graySearch} style={[styles.icon, styles.iconLeft]} />
       <TextInput
         style={styles.textInput}
-        placeholder="Search"
+        placeholder={text}
         placeholderTextColor={AppColors.gray}
       />
-       <Image source={Icons.grayExit} style={[styles.icon, styles.iconRight]}/>
+       {rightIcon && <Image source={Icons.grayExit} style={[styles.icon, styles.iconRight]}/>}
     </View>
   );
 }

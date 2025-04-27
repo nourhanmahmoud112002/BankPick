@@ -9,7 +9,7 @@ function GeneralSettings(): React.JSX.Element {
     <View>
       <SettingsSubTitle title="General" />
       <View style={styles.container}>
-        <SettingsItem title="Language" subTitle="English" />
+        <SettingsItem title="Language" subTitle="English" onPress={() => navigation.navigate('Language' as never)}/>
         <SettingsItem title="My Profile" onPress={() => navigation.navigate('Profile' as never)} />
         <SettingsItem title="Contact Us" />
       </View>

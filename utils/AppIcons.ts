@@ -59,4 +59,11 @@ export const Icons: Record<string, any> = {
  : require('../assets/images/exitDark.png'),
  grayExit:require('../assets/images/grayExit.png'),
  graySearch:require('../assets/images/graySearch.png'),
+ English:require('../assets/images/flags/English.png'),
+ Australia:require('../assets/images/flags/Australia.png'),
+ Spanish:require('../assets/images/flags/Spanish.png'),
+ America:require('../assets/images/flags/America.png'),
+ Vietnam:require('../assets/images/flags/Vietnam.png'),
+ Franch:require('../assets/images/flags/Franch.png'),
+ checked:require('../assets/images/Checked.png'),
 };

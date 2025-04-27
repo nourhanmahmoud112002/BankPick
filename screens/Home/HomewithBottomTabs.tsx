@@ -4,10 +4,14 @@ import {AppColors, isDarkMode} from '../../utils/AppColors';
 import MyCardsScreen from './MyCardsScreen';
 import StatisticsScreen from './StatisticsScreen';
 import SettingsScreen from '../Settings/SettingsScreen';
-// import SettingsIcon from '../../assets/svgs/SettingsIcon.svg';
-// import HomeIcon from '../../assets/svgs/HomeIcon.svg';
-// import CardIcon from '../../assets/svgs/CardIcon.svg';
-// import StatIcon from '../../assets/svgs/StatIcon.svg';
+import React from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {
+  faHouse,
+  faWallet,
+  faGear,
+  faChartPie,
+} from '@fortawesome/free-solid-svg-icons';
 
 function HomeWithBottomTabs(): React.JSX.Element {
   const Tab = createBottomTabNavigator();
@@ -34,37 +38,40 @@ function HomeWithBottomTabs(): React.JSX.Element {
         name="Home"
         component={HomeScreen}
         options={{
-        //   tabBarIcon: ({color, size}) => {
-        //     console.log("home",HomeIcon);
-        //    return <HomeIcon width={size} height={size} color={color} /> 
-        // } ,
+          tabBarIcon: ({color}) =>
+            (
+              <FontAwesomeIcon icon={faHouse} color={color} size={24} />
+            ) as any,
         }}
       />
       <Tab.Screen
         name="My Cards"
         component={MyCardsScreen}
         options={{
-          // tabBarIcon: ({color, size}) => (
-          //   <CardIcon width={size} height={size} color={color} />
-          // ) ,
+          tabBarIcon: ({color}) =>
+            (
+              <FontAwesomeIcon icon={faWallet} color={color} size={24} />
+            ) as any,
         }}
       />
       <Tab.Screen
         name="Statistics"
         component={StatisticsScreen}
         options={{
-          // tabBarIcon: ({color, size}) => (
-          //   <StatIcon width={size} height={size} color={color} />
-          // ),
+          tabBarIcon: ({color}) =>
+            (
+              <FontAwesomeIcon icon={faChartPie} color={color} size={24} />
+            ) as any,
         }}
       />
       <Tab.Screen
         name="Settings"
         component={SettingsScreen}
         options={{
-          // tabBarIcon: ({color, size}) => (
-          //   <SettingsIcon width={size} height={size} color={color} />
-          // ),
+          tabBarIcon: ({color}) =>
+            (
+              <FontAwesomeIcon icon={faGear} color={color} size={24} />
+            ) as any,
         }}
       />
     </Tab.Navigator>

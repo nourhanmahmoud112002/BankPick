@@ -15,7 +15,7 @@ function SearchScreen({navigation}: any): React.JSX.Element {
         imageWidth={10}
         onPress={() => navigation.goBack()}
       />
-      <SearchInputText/>
+      <SearchInputText text="Search" rightIcon={true}/>
       <HomeTransactionsList data={TransactionsList}/>
     </View>
   );
