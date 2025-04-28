@@ -2,10 +2,14 @@ import {StyleSheet,View} from 'react-native';
 import { AppColors, isDarkMode } from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
 import { Icons } from '../../utils/AppIcons';
+import CustomLineChart from '../../components/Statistics/LineChart';
+import HomeTransactions from '../../components/Home/HomeTransactions';
 
 function StatisticsScreen(): React.JSX.Element {
   return <View style={styles.container}>
     <AppBar title="Statistics" icon={Icons.notification} />
+    <CustomLineChart/>
+    <HomeTransactions/>
   </View>;
 }
 export default StatisticsScreen;
