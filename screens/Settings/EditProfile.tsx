@@ -1,31 +1,38 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {isDarkMode, AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
 import CircularImage from '../../components/CircularImage';
 import InputField from '../../components/Auth/InputFiled';
-import BirthPicker from '../../components/Settings/BirthPicker';
+import DatePickerWithLabel from '../../components/DatePickerWithLabel';
 
 function EditProfile(): React.JSX.Element {
   return (
-    <View style={styles.container}>
-      <AppBar title="Edit Profile" />
-      <View style={styles.innerContainer}>
-        <CircularImage image={require('../../assets/images/userImage.png')} />
-        <Text style={styles.name}>Tanya Myroniuk</Text>
-        <Text style={styles.title}>Senior Designer</Text>
+    <ScrollView style={styles.scroll}>
+      <View style={styles.container}>
+        <AppBar title="Edit Profile" />
+        <View style={styles.innerContainer}>
+          <CircularImage image={require('../../assets/images/userImage.png')} />
+          <Text style={styles.name}>Tanya Myroniuk</Text>
+          <Text style={styles.title}>Senior Designer</Text>
+        </View>
+        <InputField label="Full Name" leftIcon="user" />
+        <InputField label="Email Address" leftIcon="email" />
+        <InputField label="Phone Number" leftIcon="phone" />
+        <DatePickerWithLabel title="Birth Date" />
+        <View style={styles.footerContainer}>
+          <Text style={styles.footer}>
+            Joined <Text style={styles.footerDate}>28 Jan 2021</Text>
+          </Text>
+        </View>
       </View>
-      <InputField label="Full Name" leftIcon="user" />
-      <InputField label="Email Address" leftIcon="email" />
-      <InputField label="Phone Number" leftIcon="phone" />
-      <BirthPicker title="Birth Date"/>
-      <View style={styles.footerContainer}>
-        <Text style={styles.footer}>Joined <Text style={styles.footerDate}>28 Jan 2021</Text></Text>
-      </View>
-    </View>
+    </ScrollView>
   );
 }
 export default EditProfile;
 const styles = StyleSheet.create({
+  scroll: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     paddingHorizontal: 25,
@@ -51,9 +58,10 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     color: AppColors.gray,
   },
-  footerContainer:{
-    alignItems:'center',
-    marginTop:90,
+  footerContainer: {
+    alignItems: 'center',
+    marginTop: 30,
+    marginBottom: 90,
   },
   footer: {
     fontSize: 13,
@@ -62,7 +70,7 @@ const styles = StyleSheet.create({
     color: AppColors.gray,
     lineHeight: 13,
   },
-  footerDate:{
+  footerDate: {
     fontSize: 14,
     fontWeight: 500,
     fontFamily: 'Poppins-Regular',
