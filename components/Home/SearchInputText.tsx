@@ -1,17 +1,27 @@
 import {Image, StyleSheet, TextInput, View} from 'react-native';
-import {AppColors, isDarkMode} from '../../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
 import {Icons} from '../../utils/AppIcons';
+import {useTheme} from '../../hooks/darkModeContext';
 
-function SearchInputText({text,rightIcon}:any): React.JSX.Element {
+function SearchInputText({text, rightIcon}: any): React.JSX.Element {
+  const {isDarkMode} = useTheme();
   return (
     <View style={styles.container}>
       <Image source={Icons.graySearch} style={[styles.icon, styles.iconLeft]} />
       <TextInput
-        style={styles.textInput}
+        style={[
+          styles.textInput,
+          {color: isDarkMode ? 'white' : 'black'} as any,
+        ]}
         placeholder={text}
         placeholderTextColor={AppColors.gray}
       />
-       {rightIcon && <Image source={Icons.grayExit} style={[styles.icon, styles.iconRight]}/>}
+      {rightIcon && (
+        <Image
+          source={Icons.grayExit}
+          style={[styles.icon, styles.iconRight]}
+        />
+      )}
     </View>
   );
 }
@@ -20,7 +30,7 @@ export default SearchInputText;
 const styles = StyleSheet.create({
   container: {
     marginTop: 32,
-    marginBottom:30,
+    marginBottom: 30,
     flexDirection: 'row',
     borderWidth: 1.5,
     borderColor: AppColors.darkGray,
@@ -29,7 +39,6 @@ const styles = StyleSheet.create({
   },
   textInput: {
     flex: 1,
-    color: isDarkMode ? 'white' : 'black',
     fontSize: 16,
     fontWeight: '400',
     fontFamily: 'Poppins-Regular',

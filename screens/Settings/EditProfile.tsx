@@ -1,18 +1,30 @@
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {isDarkMode, AppColors} from '../../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
 import CircularImage from '../../components/CircularImage';
 import InputField from '../../components/Auth/InputFiled';
 import DatePickerWithLabel from '../../components/DatePickerWithLabel';
+import {useTheme} from '../../hooks/darkModeContext';
 
 function EditProfile(): React.JSX.Element {
+  const {isDarkMode} = useTheme();
   return (
     <ScrollView style={styles.scroll}>
-      <View style={styles.container}>
+      <View
+        style={[
+          styles.container,
+          {backgroundColor: isDarkMode ? AppColors.dark : 'white'} as any,
+        ]}>
         <AppBar title="Edit Profile" />
         <View style={styles.innerContainer}>
           <CircularImage image={require('../../assets/images/userImage.png')} />
-          <Text style={styles.name}>Tanya Myroniuk</Text>
+          <Text
+            style={[
+              styles.name,
+              {color: isDarkMode ? 'white' : 'black'} as any,
+            ]}>
+            Tanya Myroniuk
+          </Text>
           <Text style={styles.title}>Senior Designer</Text>
         </View>
         <InputField label="Full Name" leftIcon="user" />
@@ -37,7 +49,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 25,
     paddingTop: 54,
-    backgroundColor: isDarkMode ? AppColors.dark : 'white',
   },
   innerContainer: {
     alignItems: 'center',
@@ -48,7 +59,6 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: '500',
     fontFamily: 'Poppins-Regular',
-    color: isDarkMode ? 'white' : 'black',
     marginBottom: 10,
     marginTop: 21,
   },

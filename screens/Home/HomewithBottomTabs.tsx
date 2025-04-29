@@ -1,6 +1,6 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from './HomeScreen';
-import {AppColors, isDarkMode} from '../../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
 import MyCardsScreen from './MyCardsScreen';
 import StatisticsScreen from './StatisticsScreen';
 import SettingsScreen from '../Settings/SettingsScreen';
@@ -12,8 +12,10 @@ import {
   faGear,
   faChartPie,
 } from '@fortawesome/free-solid-svg-icons';
+import { useTheme } from '../../hooks/darkModeContext';
 
 function HomeWithBottomTabs(): React.JSX.Element {
+  const {isDarkMode} = useTheme();
   const Tab = createBottomTabNavigator();
   return (
     <Tab.Navigator

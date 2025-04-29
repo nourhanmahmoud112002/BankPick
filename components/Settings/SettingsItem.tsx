@@ -1,7 +1,8 @@
 import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
-import {AppColors, isDarkMode} from '../../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
 // import Icon from '../Icon';
 import {Icons} from '../../utils/AppIcons';
+import {useTheme} from '../../hooks/darkModeContext';
 
 function SettingsItem({
   title,
@@ -10,6 +11,7 @@ function SettingsItem({
   suffICon,
   onPress,
 }: any): React.JSX.Element {
+  const {isDarkMode} = useTheme();
   let suffiexIcon = <Image source={Icons.nextArrow} style={styles.image} />;
   if (suffICon) {
     suffiexIcon = suffICon;
@@ -19,7 +21,13 @@ function SettingsItem({
       <View style={styles.container}>
         <View style={styles.leftContainer}>
           {preIcon && <Image source={preIcon} style={styles.preIcon} />}
-          <Text style={styles.title}>{title}</Text>
+          <Text
+            style={[
+              styles.title,
+              {color: isDarkMode ? 'white' : 'black'} as any,
+            ]}>
+            {title}
+          </Text>
         </View>
         <View style={styles.innerContainer}>
           <Text style={styles.subTitle}>{subTitle}</Text>
@@ -40,7 +48,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingBottom: 10,
   },
-  leftContainer:{
+  leftContainer: {
     flexDirection: 'row',
   },
   innerContainer: {
@@ -56,7 +64,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
     fontFamily: 'Poppins-Regular',
-    color: isDarkMode ? 'white' : 'black',
   },
   subTitle: {
     fontSize: 14,

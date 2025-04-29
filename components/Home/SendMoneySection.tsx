@@ -1,15 +1,24 @@
 import {StyleSheet, Text, TextInput, View} from 'react-native';
-import {AppColors, isDarkMode} from '../../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
+import {useTheme} from '../../hooks/darkModeContext';
 
 function SendMoneySection(): React.JSX.Element {
+  const {isDarkMode} = useTheme();
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        {backgroundColor: isDarkMode ? AppColors.darkerGray : 'white'} as any,
+      ]}>
       <Text style={styles.label}>Enter Your Amount</Text>
       <View style={styles.moneyContianer}>
         <Text style={styles.money}>USD</Text>
         <TextInput
           placeholder="36.00"
-          style={styles.moneyInput}
+          style={[
+            styles.moneyInput,
+            {color: isDarkMode ? 'white' : 'black'} as any,
+          ]}
           placeholderTextColor={isDarkMode ? 'white' : 'black'}
         />
       </View>
@@ -19,10 +28,11 @@ function SendMoneySection(): React.JSX.Element {
 export default SendMoneySection;
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: AppColors.darkerGray,
     height: 120,
     width: '100%',
     borderRadius: 14,
+    borderWidth:1,
+    borderColor:'#E7EAEE',
     paddingLeft: 16,
     marginBottom: 31,
     alignItems: 'flex-start',
@@ -47,7 +57,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
   },
   moneyInput: {
-    color: isDarkMode ? 'white' : 'black',
     marginLeft: 16,
     fontSize: 24,
     fontWeight: '600',

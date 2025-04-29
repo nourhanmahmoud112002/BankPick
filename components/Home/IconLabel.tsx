@@ -1,8 +1,18 @@
 import {StyleSheet, Text} from 'react-native';
-import { AppColors, isDarkMode } from '../../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
+import {useTheme} from '../../hooks/darkModeContext';
 
 function IconLabel({text}: any): React.JSX.Element {
-  return <Text style={styles.text}>{text}</Text>;
+  const {isDarkMode} = useTheme();
+  return (
+    <Text
+      style={[
+        styles.text,
+        {color: isDarkMode ? AppColors.lightGray : AppColors.darkerGray} as any,
+      ]}>
+      {text}
+    </Text>
+  );
 }
 export default IconLabel;
 const styles = StyleSheet.create({
@@ -10,7 +20,6 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '400',
     fontFamily: 'Poppins-Regular',
-    color:isDarkMode ? AppColors.lightGray : AppColors.darkerGray,
-    marginTop:7,
+    marginTop: 7,
   },
 });

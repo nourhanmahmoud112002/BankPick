@@ -1,7 +1,9 @@
 import {Image, Pressable, StyleSheet} from 'react-native';
-import {AppColors, isDarkMode} from '../utils/AppColors';
+import {AppColors} from '../utils/AppColors';
+import { useTheme } from '../hooks/darkModeContext';
 
 function Icon({width, icon, onPress,imageWidth}: any): React.JSX.Element {
+  const {isDarkMode} = useTheme();
   return (
     <Pressable
       onPress={onPress}

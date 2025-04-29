@@ -1,8 +1,13 @@
 import {StyleSheet, Text} from 'react-native';
-import {isDarkMode} from '../utils/AppColors';
+import {useTheme} from '../hooks/darkModeContext';
 
 function SectionTitle({title}: any): React.JSX.Element {
-  return <Text style={styles.text}>{title}</Text>;
+  const {isDarkMode} = useTheme();
+  return (
+    <Text style={[styles.text, {color: isDarkMode ? 'white' : 'black'} as any]}>
+      {title}
+    </Text>
+  );
 }
 export default SectionTitle;
 const styles = StyleSheet.create({
@@ -10,6 +15,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '500',
     fontFamily: 'Poppins-Regular',
-    color: isDarkMode ? 'white' : 'black',
   },
 });

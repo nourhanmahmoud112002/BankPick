@@ -1,13 +1,21 @@
 import {Dimensions, StyleSheet, Text, View} from 'react-native';
 import {LineChart} from 'react-native-chart-kit';
-import {AppColors, isDarkMode} from '../../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
+import {useTheme} from '../../hooks/darkModeContext';
 
 function CustomLineChart(): React.JSX.Element {
+  const {isDarkMode} = useTheme();
   return (
     <View>
       <View style={styles.textContainer}>
         <Text style={styles.label}>Current Balance</Text>
-        <Text style={styles.balanceText}>$8,545.00</Text>
+        <Text
+          style={[
+            styles.balanceText,
+            {color: isDarkMode ? 'white' : 'black'} as any,
+          ]}>
+          $8,545.00
+        </Text>
       </View>
       <View style={styles.chartContainer}>
         <LineChart
@@ -48,7 +56,7 @@ function CustomLineChart(): React.JSX.Element {
               fill: AppColors.primaryColor,
             },
             propsForBackgroundLines: {
-              stroke: '#1E1E2D',
+              stroke: isDarkMode ?  '#1E1E2D' : '#F4F4F4',
               strokeWidth: '1',
               strokeDasharray: '0,0',
             },
@@ -87,7 +95,6 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontWeight: '600',
     fontFamily: 'Poppins-Regular',
-    color: isDarkMode ? 'white' : 'black',
   },
   chartContainer: {
     width: '100%',

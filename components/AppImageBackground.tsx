@@ -24,6 +24,5 @@ const styles = StyleSheet.create({
     height: 450,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'rgba(0, 255, 0, 0.3)',
   },
 });

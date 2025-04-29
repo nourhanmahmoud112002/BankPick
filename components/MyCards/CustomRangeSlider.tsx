@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import MultiSlider from '@ptomasroos/react-native-multi-slider';
-import {AppColors, isDarkMode} from '../../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
+import {useTheme} from '../../hooks/darkModeContext';
 
 const CustomRangeSlider = () => {
   const [range, setRange] = useState([4600]);
+  const {isDarkMode} = useTheme();
 
   return (
     <View style={styles.container}>
@@ -15,8 +17,20 @@ const CustomRangeSlider = () => {
         min={0}
         max={10000}
         step={100}
-        selectedStyle={styles.selectedStyle}
-        unselectedStyle={styles.unselectedStyle}
+        selectedStyle={
+          {
+            backgroundColor: isDarkMode ? 'white' : AppColors.primaryColor,
+            height: 7,
+            borderRadius: 30,
+          } as any
+        }
+        unselectedStyle={
+          {
+            backgroundColor: isDarkMode ? '#292937' : 'white',
+            height: 7,
+            borderRadius: 30,
+          } as any
+        }
         markerStyle={styles.markerStyle}
       />
       <View style={styles.labelContainerWrapper}>
@@ -51,16 +65,6 @@ const CustomRangeSlider = () => {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-  },
-  selectedStyle: {
-    backgroundColor: isDarkMode ? 'white' : AppColors.primaryColor,
-    height: 7,
-    borderRadius: 30,
-  },
-  unselectedStyle: {
-    backgroundColor: isDarkMode ? '#292937' : 'white',
-    height: 7,
-    borderRadius: 30,
   },
   markerStyle: {
     backgroundColor: 'white',

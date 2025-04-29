@@ -1,16 +1,19 @@
-
-
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
-import { AppColors, isDarkMode } from '../../utils/AppColors';
+import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import {AppColors} from '../../utils/AppColors';
 import CircularImage from '../CircularImage';
-import { Icons } from '../../utils/AppIcons';
+import {Icons} from '../../utils/AppIcons';
+import { useTheme } from '../../hooks/darkModeContext';
 
-function LanguageItem({ item, checked, onPress }: any): React.JSX.Element {
+function LanguageItem({item, checked, onPress}: any): React.JSX.Element {
+  const {isDarkMode} = useTheme();
   return (
     <Pressable onPress={onPress}>
       <View style={styles.container}>
         <CircularImage image={item.Icon} width={48} />
-        <Text style={styles.name}>{item.name}</Text>
+        <Text
+          style={[styles.name, {color: isDarkMode ? 'white' : 'black'} as any]}>
+          {item.name}
+        </Text>
         {checked && (
           <Image source={Icons.checked} style={styles.checkedImage} />
         )}
@@ -32,7 +35,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   name: {
-    color: isDarkMode ? 'white' : 'black',
     fontSize: 16,
     fontWeight: '500',
     fontFamily: 'Poppins-Regular',

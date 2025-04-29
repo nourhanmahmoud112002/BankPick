@@ -1,20 +1,30 @@
 import {StyleSheet, Text, View} from 'react-native';
 import Icon from '../Icon';
-import {AppColors, isDarkMode} from '../../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
+import {useTheme} from '../../hooks/darkModeContext';
 
 function HomeTransItem({item}: any): React.JSX.Element {
-  console.log(item);
+  const {isDarkMode} = useTheme();
 
   return (
     <View style={styles.container}>
       <View style={styles.leftSection}>
         <Icon width={42} icon={item.iconName} />
         <View style={styles.textContainer}>
-          <Text style={styles.titleText}>{item.title}</Text>
+          <Text
+            style={[
+              styles.titleText,
+              {color: isDarkMode ? 'white' : 'black'} as any,
+            ]}>
+            {item.title}
+          </Text>
           <Text style={styles.categoryText}>{item.category}</Text>
         </View>
       </View>
-      <Text style={styles.money}>{item.money}</Text>
+      <Text
+        style={[styles.money, {color: isDarkMode ? 'white' : 'black'} as any]}>
+        {item.money}
+      </Text>
     </View>
   );
 }
@@ -38,7 +48,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
     fontFamily: 'Poppins-Regular',
-    color: isDarkMode ? 'white' : 'black',
+
     marginBottom: 7,
   },
   categoryText: {
@@ -52,6 +62,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
     fontFamily: 'Poppins-Regular',
-    color: isDarkMode ? 'white' : 'black',
   },
 });

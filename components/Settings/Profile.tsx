@@ -1,13 +1,18 @@
 import {StyleSheet, Text, View} from 'react-native';
 import CircularImage from '../CircularImage';
-import {AppColors, isDarkMode} from '../../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
+import {useTheme} from '../../hooks/darkModeContext';
 
 function Profile({name, title}: any): React.JSX.Element {
+  const {isDarkMode} = useTheme();
   return (
     <View style={styles.container}>
       <CircularImage image={require('../../assets/images/userImage.png')} />
       <View style={styles.innerContainer}>
-        <Text style={styles.name}>{name}</Text>
+        <Text
+          style={[styles.name, {color: isDarkMode ? 'white' : 'black'} as any]}>
+          {name}
+        </Text>
         <Text style={styles.title}>{title}</Text>
       </View>
     </View>
@@ -21,15 +26,14 @@ const styles = StyleSheet.create({
     marginTop: 32,
     marginBottom: 10,
   },
-  innerContainer:{
-    marginLeft:22,
+  innerContainer: {
+    marginLeft: 22,
   },
   name: {
     fontSize: 17,
     fontWeight: '500',
     fontFamily: 'Poppins-Regular',
-    color: isDarkMode ? 'white' : 'black',
-    marginBottom:10,
+    marginBottom: 10,
   },
   title: {
     fontSize: 14,

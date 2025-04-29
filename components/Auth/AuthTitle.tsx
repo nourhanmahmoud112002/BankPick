@@ -1,8 +1,12 @@
 import {StyleSheet, Text} from 'react-native';
-import {isDarkMode} from '../../utils/AppColors';
-
+import {useTheme} from '../../hooks/darkModeContext';
 function AuthTitle({children}: any): React.JSX.Element {
-  return <Text style={styles.text}>{children}</Text>;
+  const {isDarkMode} = useTheme();
+  return (
+    <Text style={[styles.text, {color: isDarkMode ? 'white' : 'black'} as any]}>
+      {children}
+    </Text>
+  );
 }
 export default AuthTitle;
 const styles = StyleSheet.create({
@@ -10,8 +14,8 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: '500',
     fontFamily: 'Poppins-Regular',
-    color: isDarkMode ? 'white' : 'black',
-    marginBottom:38,
-    marginTop:53,
+
+    marginBottom: 38,
+    marginTop: 53,
   },
 });

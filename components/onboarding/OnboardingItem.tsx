@@ -1,17 +1,25 @@
 import {View, Text, StyleSheet, Image, useWindowDimensions} from 'react-native';
-import {AppColors, isDarkMode} from '../../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
 import Paginator from '../onboarding/Paginator';
 import {OnboardingList} from '../../utils/Constants';
+import {useTheme} from '../../hooks/darkModeContext';
 
 function OnboardingItem({item, scrollX}: any): React.JSX.Element {
   const {width, height} = useWindowDimensions();
+  const {isDarkMode} = useTheme();
 
   return (
     <View style={[styles.container, {width, height}]}>
       <Image source={item.image} style={[styles.image]} />
       <Paginator data={OnboardingList} scrollX={scrollX} />
       <View style={styles.innerContainer}>
-        <Text style={styles.title}>{item.title}</Text>
+        <Text
+          style={[
+            styles.title,
+            {color: isDarkMode ? 'white' : 'black'} as any,
+          ]}>
+          {item.title}
+        </Text>
         <Text style={styles.content}>{item.content}</Text>
       </View>
     </View>
@@ -40,15 +48,14 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 26,
     fontWeight: '600',
-    fontFamily:'Poppins-Regular',
-    color: isDarkMode ? 'white' : 'black',
+    fontFamily: 'Poppins-Regular',
     textAlign: 'center',
     marginBottom: 10,
   },
   content: {
     fontSize: 14,
     fontWeight: '400',
-    fontFamily:'Poppins-Regular',
+    fontFamily: 'Poppins-Regular',
     textAlign: 'center',
     lineHeight: 24,
     color: AppColors.gray,

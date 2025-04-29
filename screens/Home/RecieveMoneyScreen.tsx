@@ -1,15 +1,21 @@
 import {ScrollView, StyleSheet, View} from 'react-native';
-import {isDarkMode, AppColors} from '../../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
 import InputField from '../../components/Auth/InputFiled';
 import DatePickerWithLabel from '../../components/DatePickerWithLabel';
 import SendMoneySection from '../../components/Home/SendMoneySection';
 import AppButton from '../../components/AppButton';
+import {useTheme} from '../../hooks/darkModeContext';
 
 function RecieveMoneyScreen(): React.JSX.Element {
+  const {isDarkMode} = useTheme();
   return (
     <ScrollView style={styles.scroll}>
-      <View style={styles.container}>
+      <View
+        style={[
+          styles.container,
+          {backgroundColor: isDarkMode ? AppColors.dark : 'white'} as any,
+        ]}>
         <AppBar title="Recieve Money" />
         <View style={styles.innerContianer}>
           <InputField
@@ -46,7 +52,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 25,
     paddingTop: 54,
-    backgroundColor: isDarkMode ? AppColors.dark : 'white',
   },
   innerContianer: {
     marginTop: 31,

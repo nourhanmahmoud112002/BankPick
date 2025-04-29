@@ -1,22 +1,28 @@
 import {StyleSheet, View} from 'react-native';
-import {isDarkMode, AppColors} from '../../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
 import {Icons} from '../../utils/AppIcons';
 import SearchInputText from '../../components/Home/SearchInputText';
 import HomeTransactionsList from '../../components/Home/HomeTransactionsList';
-import { TransactionsList } from '../../utils/Constants';
+import {TransactionsList} from '../../utils/Constants';
+import {useTheme} from '../../hooks/darkModeContext';
 
 function SearchScreen({navigation}: any): React.JSX.Element {
+  const {isDarkMode} = useTheme();
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        {backgroundColor: isDarkMode ? AppColors.dark : 'white'} as any,
+      ]}>
       <AppBar
         title="Search"
         icon={Icons.exit}
         imageWidth={10}
         onPress={() => navigation.goBack()}
       />
-      <SearchInputText text="Search" rightIcon={true}/>
-      <HomeTransactionsList data={TransactionsList}/>
+      <SearchInputText text="Search" rightIcon={true} />
+      <HomeTransactionsList data={TransactionsList} />
     </View>
   );
 }
@@ -27,6 +33,5 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 25,
     paddingTop: 54,
-    backgroundColor: isDarkMode ? AppColors.dark : 'white',
   },
 });

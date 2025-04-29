@@ -1,7 +1,8 @@
 import {Animated, StyleSheet, View} from 'react-native';
-import {isDarkMode} from '../../utils/AppColors';
 import {useRef, useEffect} from 'react';
+import {useTheme} from '../../hooks/darkModeContext';
 function SplashScreen({navigation}: any): React.JSX.Element {
+  const {isDarkMode} = useTheme();
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const scaleAnim = useRef(new Animated.Value(0.5)).current;
 
@@ -33,7 +34,11 @@ function SplashScreen({navigation}: any): React.JSX.Element {
           {opacity: fadeAnim, transform: [{scale: scaleAnim}]},
         ]}
       />
-      <Animated.Text style={[styles.text, {opacity: fadeAnim}]}>
+      <Animated.Text
+        style={[
+          styles.text,
+          {opacity: fadeAnim, color: isDarkMode ? 'white' : 'black'} as any,
+        ]}>
         BANKPICK
       </Animated.Text>
     </View>
@@ -56,7 +61,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 35,
     fontWeight: '600',
-    color: isDarkMode ? 'white' : 'black',
     fontFamily: 'Poppins-Regular',
   },
 });

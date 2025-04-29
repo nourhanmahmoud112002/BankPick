@@ -1,15 +1,20 @@
 import {StyleSheet, View} from 'react-native';
-import {isDarkMode, AppColors} from '../../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
 import {Icons} from '../../utils/AppIcons';
 import Profile from '../../components/Settings/Profile';
 import SettingsItem from '../../components/Settings/SettingsItem';
 import NotificationIcon from '../../components/Settings/NotificationIcon';
+import {useTheme} from '../../hooks/darkModeContext';
 
 function ProfileScreen({navigation}: any): React.JSX.Element {
-  // const navigation = useNavigation();
+  const {isDarkMode} = useTheme();
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        {backgroundColor: isDarkMode ? AppColors.dark : 'white'} as any,
+      ]}>
       <AppBar
         title="Profile"
         icon={Icons.editUser}
@@ -44,6 +49,5 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 25,
     paddingTop: 54,
-    backgroundColor: isDarkMode ? AppColors.dark : 'white',
   },
 });

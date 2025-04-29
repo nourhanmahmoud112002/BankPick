@@ -1,11 +1,17 @@
 import {StyleSheet, View} from 'react-native';
 import HomeAppBar from '../../components/Home/HomeAppBar';
 import HomeContent from '../../components/Home/HomeContent';
-import {AppColors, isDarkMode} from '../../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
+import {useTheme} from '../../hooks/darkModeContext';
 
 function HomeScreen(): React.JSX.Element {
+  const {isDarkMode} = useTheme();
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        {backgroundColor: isDarkMode ? AppColors.dark : 'white'} as any,
+      ]}>
       <HomeAppBar />
       <HomeContent />
     </View>
@@ -17,6 +23,5 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 25,
     paddingTop: 54,
-    backgroundColor: isDarkMode ? AppColors.dark : 'white',
   },
 });
