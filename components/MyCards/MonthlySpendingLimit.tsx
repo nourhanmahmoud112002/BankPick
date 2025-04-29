@@ -25,10 +25,10 @@ function MonthySpendingLimit(): React.JSX.Element {
 export default MonthySpendingLimit;
 const styles = StyleSheet.create({
   container: {
-    marginTop: 20,
+    marginTop: 7,
   },
   innerContainer: {
-    marginTop: 10,
+    marginTop: 18,
     marginBottom: 10,
     paddingHorizontal: 24,
     paddingVertical: 12,

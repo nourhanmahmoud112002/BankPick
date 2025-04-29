@@ -2,12 +2,14 @@ import {StyleSheet, View} from 'react-native';
 import {AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
 import AppImageBackground from '../../components/AppImageBackground';
-import {Icons} from '../../utils/AppIcons';
+
 import AppButton from '../../components/AppButton';
 import {useTheme} from '../../hooks/darkModeContext';
+import { useIcons } from '../../utils/AppIcons';
 
 function AllCardsScreen({navigation}: any): React.JSX.Element {
   const {isDarkMode} = useTheme();
+   const Icons = useIcons();
   return (
     <View
       style={[

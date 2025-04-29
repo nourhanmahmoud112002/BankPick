@@ -1,12 +1,13 @@
 import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import Icon from '../Icon';
-import {Icons} from '../../utils/AppIcons';
 import IconLabel from './IconLabel';
 import {useNavigation} from '@react-navigation/native';
+import { useIcons } from '../../utils/AppIcons';
 
 function HomeCategorizeIcons(): React.JSX.Element {
   const navigation = useNavigation();
+   const Icons = useIcons();
   return (
     <View style={[styles.container]}>
       <View style={styles.innerContainer}>

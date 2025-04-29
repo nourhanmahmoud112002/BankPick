@@ -1,12 +1,13 @@
 import {Image, Pressable, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {Icons} from '../utils/AppIcons';
-import { AppColors} from '../utils/AppColors';
-import { useTheme } from '../hooks/darkModeContext';
+import {AppColors} from '../utils/AppColors';
+import {useTheme} from '../hooks/darkModeContext';
+import {useIcons} from '../utils/AppIcons';
 
 function BackIcon(): React.JSX.Element {
   const navigation = useNavigation();
   const {isDarkMode} = useTheme();
+  const icons = useIcons();
   return (
     <Pressable
       onPress={() => navigation.goBack()}
@@ -19,7 +20,7 @@ function BackIcon(): React.JSX.Element {
             : AppColors.lighterGray,
         },
       ]}>
-      <Image style={styles.image} source={Icons.backIcon} />
+      <Image style={styles.image} source={icons.backIcon} />
     </Pressable>
   );
 }
@@ -39,4 +40,3 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
 });
-

@@ -2,13 +2,14 @@ import {StyleSheet, Text, View} from 'react-native';
 import CircularImage from '../CircularImage';
 import {AppColors} from '../../utils/AppColors';
 import Icon from '../Icon';
-import {Icons} from '../../utils/AppIcons';
 import {useNavigation} from '@react-navigation/native';
 import {useTheme} from '../../hooks/darkModeContext';
+import { useIcons } from '../../utils/AppIcons';
 
 function HomeAppBar(): React.JSX.Element {
   const navigation = useNavigation();
   const {isDarkMode} = useTheme();
+   const Icons = useIcons();
   return (
     <View style={styles.container}>
       <CircularImage image={require('../../assets/images/userImage.png')} />

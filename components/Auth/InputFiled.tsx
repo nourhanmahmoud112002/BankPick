@@ -1,7 +1,7 @@
 import {Image, StyleSheet, Text, TextInput, View} from 'react-native';
 import {AppColors} from '../../utils/AppColors';
-import {Icons} from '../../utils/AppIcons';
 import {useTheme} from '../../hooks/darkModeContext';
+import {useIcons} from '../../utils/AppIcons';
 
 function InputField({
   label,
@@ -10,12 +10,13 @@ function InputField({
   defaultValue,
 }: any): React.JSX.Element {
   const {isDarkMode} = useTheme();
+  const icons = useIcons();
   return (
     <View style={styles.container}>
       <Text style={styles.textLabel}>{label}</Text>
       <View style={styles.inputContainer}>
         <Image
-          source={Icons[leftIcon]}
+          source={icons[leftIcon as keyof typeof icons]}
           style={[styles.iconLeft, styles.icon]}
         />
         <TextInput
@@ -27,7 +28,7 @@ function InputField({
         />
         {rightIcon && (
           <Image
-            source={Icons[rightIcon]}
+            source={icons[rightIcon as keyof typeof icons]}
             style={[styles.iconRight, styles.icon]}
           />
         )}

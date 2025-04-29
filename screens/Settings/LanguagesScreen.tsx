@@ -3,13 +3,14 @@ import { StyleSheet, View, ScrollView } from 'react-native';
 import { AppColors } from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
 import SearchInputText from '../../components/Home/SearchInputText';
-import { LanguagesList } from '../../utils/Constants';
 import LanguageItem from '../../components/Settings/LanguageItem';
 import { useTheme } from '../../hooks/darkModeContext';
+import { useLanguagesList } from '../../data/appData';
 
 function LanguagesScreen(): React.JSX.Element {
   const [selectedId, setSelectedId] = useState('1');
   const {isDarkMode} = useTheme();
+  const LanguagesList = useLanguagesList();
 
   return (
     <View style={[styles.container, {backgroundColor: isDarkMode ? AppColors.dark : 'white'} as any]}>

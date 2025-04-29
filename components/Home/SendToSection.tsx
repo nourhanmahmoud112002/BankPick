@@ -1,12 +1,13 @@
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {AppColors} from '../../utils/AppColors';
 import CircularImage from '../CircularImage';
-import {Icons} from '../../utils/AppIcons';
 import SectionTitle from '../SectionTitle';
 import {useTheme} from '../../hooks/darkModeContext';
+import { useIcons } from '../../utils/AppIcons';
 
 function SendToSection(): React.JSX.Element {
   const {isDarkMode} = useTheme();
+   const Icons = useIcons();
   return (
     <View
       style={[

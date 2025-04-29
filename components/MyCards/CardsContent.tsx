@@ -1,11 +1,13 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import HomeTransactionsList from '../Home/HomeTransactionsList';
-import {TransactionsList} from '../../utils/Constants';
+
 import MonthySpendingLimit from './MonthlySpendingLimit';
 import AppImageBackground from '../AppImageBackground';
+import { useTransactionsList } from '../../data/appData';
 
 function CardsContent(): React.JSX.Element {
+   const TransactionsList = useTransactionsList();
   return (
     <AppImageBackground  marginTop={32}>
       <View style={styles.contentContainer}>
@@ -22,6 +24,6 @@ export default CardsContent;
 const styles = StyleSheet.create({
   contentContainer: {
     width: '100%',
-    paddingTop: 320,
+    paddingTop: 330,
   },
 });

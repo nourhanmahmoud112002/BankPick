@@ -1,14 +1,15 @@
 import {StyleSheet, View} from 'react-native';
 import {AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
-import {Icons} from '../../utils/AppIcons';
 import Profile from '../../components/Settings/Profile';
 import SettingsItem from '../../components/Settings/SettingsItem';
 import NotificationIcon from '../../components/Settings/NotificationIcon';
 import {useTheme} from '../../hooks/darkModeContext';
+import {useIcons} from '../../utils/AppIcons';
 
 function ProfileScreen({navigation}: any): React.JSX.Element {
   const {isDarkMode} = useTheme();
+  const Icons = useIcons();
   return (
     <View
       style={[

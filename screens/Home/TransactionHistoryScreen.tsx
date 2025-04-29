@@ -3,12 +3,14 @@ import {AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
 import SectionTitle from '../../components/SectionTitle';
 import HomeTransactionsList from '../../components/Home/HomeTransactionsList';
-import {TransactionsHistoryList} from '../../utils/Constants';
-import {Icons} from '../../utils/AppIcons';
 import {useTheme} from '../../hooks/darkModeContext';
+import {useIcons} from '../../utils/AppIcons';
+import { useTransactionsHistoryList } from '../../data/appData';
 
 function TransactionHistoryScreen(): React.JSX.Element {
   const {isDarkMode} = useTheme();
+  const Icons = useIcons();
+  const TransactionsHistoryList = useTransactionsHistoryList();
   return (
     <View
       style={[

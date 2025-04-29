@@ -1,14 +1,17 @@
 import {StyleSheet, View} from 'react-native';
 import {AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
-import {Icons} from '../../utils/AppIcons';
 import SearchInputText from '../../components/Home/SearchInputText';
 import HomeTransactionsList from '../../components/Home/HomeTransactionsList';
-import {TransactionsList} from '../../utils/Constants';
+
 import {useTheme} from '../../hooks/darkModeContext';
+import {useIcons} from '../../utils/AppIcons';
+import { useTransactionsList } from '../../data/appData';
 
 function SearchScreen({navigation}: any): React.JSX.Element {
   const {isDarkMode} = useTheme();
+  const Icons = useIcons();
+  const TransactionsList = useTransactionsList();
   return (
     <View
       style={[

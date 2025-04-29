@@ -1,8 +1,7 @@
 import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import {AppColors} from '../../utils/AppColors';
-// import Icon from '../Icon';
-import {Icons} from '../../utils/AppIcons';
 import {useTheme} from '../../hooks/darkModeContext';
+import { useIcons } from '../../utils/AppIcons';
 
 function SettingsItem({
   title,
@@ -12,6 +11,7 @@ function SettingsItem({
   onPress,
 }: any): React.JSX.Element {
   const {isDarkMode} = useTheme();
+   const Icons = useIcons();
   let suffiexIcon = <Image source={Icons.nextArrow} style={styles.image} />;
   if (suffICon) {
     suffiexIcon = suffICon;

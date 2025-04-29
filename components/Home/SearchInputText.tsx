@@ -1,10 +1,11 @@
 import {Image, StyleSheet, TextInput, View} from 'react-native';
 import {AppColors} from '../../utils/AppColors';
-import {Icons} from '../../utils/AppIcons';
 import {useTheme} from '../../hooks/darkModeContext';
+import { useIcons } from '../../utils/AppIcons';
 
 function SearchInputText({text, rightIcon}: any): React.JSX.Element {
   const {isDarkMode} = useTheme();
+   const Icons = useIcons();
   return (
     <View style={styles.container}>
       <Image source={Icons.graySearch} style={[styles.icon, styles.iconLeft]} />

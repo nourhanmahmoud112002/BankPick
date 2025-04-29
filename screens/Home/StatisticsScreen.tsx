@@ -1,13 +1,14 @@
 import {StyleSheet, View} from 'react-native';
 import {AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
-import {Icons} from '../../utils/AppIcons';
 import CustomLineChart from '../../components/Statistics/LineChart';
 import HomeTransactions from '../../components/Home/HomeTransactions';
 import {useTheme} from '../../hooks/darkModeContext';
+import {useIcons} from '../../utils/AppIcons';
 
 function StatisticsScreen(): React.JSX.Element {
   const {isDarkMode} = useTheme();
+  const Icons = useIcons();
   return (
     <View
       style={[

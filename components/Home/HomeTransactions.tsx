@@ -1,12 +1,13 @@
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {AppColors} from '../../utils/AppColors';
-import {TransactionsList} from '../../utils/Constants';
 import HomeTransactionsList from './HomeTransactionsList';
 import SectionTitle from '../SectionTitle';
 import {useNavigation} from '@react-navigation/native';
+import { useTransactionsList } from '../../data/appData';
 
 function HomeTransactions(): React.JSX.Element {
   const navigation = useNavigation();
+  const TransactionsList = useTransactionsList();
   return (
     <ScrollView>
       <View style={styles.container}>
