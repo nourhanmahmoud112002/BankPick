@@ -5,14 +5,13 @@ type ThemeContextType = {
   toggleTheme: () => void;
 };
 
-// Set default fallback value (this won't be used because the provider will override it)
 const ThemeContext = createContext<ThemeContextType>({
-  isDarkMode: false,
+  isDarkMode: true,
   toggleTheme: () => {},
 });
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const toggleTheme = () => setIsDarkMode(prev => !prev);
 
