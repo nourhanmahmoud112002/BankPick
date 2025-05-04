@@ -1,4 +1,10 @@
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  useWindowDimensions,
+  View,
+} from 'react-native';
 import {AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
 import CircularImage from '../../components/CircularImage';
@@ -8,12 +14,17 @@ import {useTheme} from '../../hooks/darkModeContext';
 
 function EditProfile(): React.JSX.Element {
   const {isDarkMode} = useTheme();
+  const {width, height} = useWindowDimensions();
   return (
     <ScrollView style={styles.scroll}>
       <View
         style={[
-          styles.container,
-          {backgroundColor: isDarkMode ? AppColors.dark : 'white'} as any,
+          styles.scroll,
+          {
+            paddingHorizontal: width * 0.06,
+            paddingTop: height * 0.065,
+            backgroundColor: isDarkMode ? AppColors.dark : 'white',
+          } as any,
         ]}>
         <AppBar title="Edit Profile" />
         <View style={styles.innerContainer}>
@@ -44,11 +55,6 @@ export default EditProfile;
 const styles = StyleSheet.create({
   scroll: {
     flex: 1,
-  },
-  container: {
-    flex: 1,
-    paddingHorizontal: 25,
-    paddingTop: 54,
   },
   innerContainer: {
     alignItems: 'center',

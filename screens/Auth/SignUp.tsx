@@ -3,6 +3,7 @@ import {
   Platform,
   ScrollView,
   StyleSheet,
+  useWindowDimensions,
   View,
 } from 'react-native';
 import AuthTitle from '../../components/Auth/AuthTitle';
@@ -12,6 +13,7 @@ import AppButton from '../../components/AppButton';
 import RichText from '../../components/Auth/RichText';
 
 function SignUpScreen({navigation}: any): React.JSX.Element {
+  const width = useWindowDimensions().width;
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -19,7 +21,7 @@ function SignUpScreen({navigation}: any): React.JSX.Element {
       keyboardVerticalOffset={50} // tweak this if needed
     >
       <ScrollView contentContainerStyle={styles.scrollContainer}>
-        <View style={styles.container}>
+        <View style={[styles.container, {paddingHorizontal: width * 0.06}]}>
           <BackIcon />
           <AuthTitle>Sign Up</AuthTitle>
           <InputField label="Full Name" leftIcon="user" />
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   container: {
-    paddingHorizontal: 25,
+    // paddingHorizontal: 25,
     paddingTop: 20,
   },
   button: {

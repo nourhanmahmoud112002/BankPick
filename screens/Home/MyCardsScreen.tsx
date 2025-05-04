@@ -1,4 +1,4 @@
-import {StyleSheet, View} from 'react-native';
+import {ScrollView, StyleSheet, useWindowDimensions} from 'react-native';
 import {AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
 
@@ -9,11 +9,16 @@ import {useIcons} from '../../utils/AppIcons';
 function MyCardsScreen({navigation}: any): React.JSX.Element {
   const {isDarkMode} = useTheme();
   const Icons = useIcons();
+  const {width, height} = useWindowDimensions();
   return (
-    <View
+    <ScrollView
       style={[
         styles.container,
-        {backgroundColor: isDarkMode ? AppColors.dark : 'white'} as any,
+        {
+          paddingHorizontal: width * 0.06,
+          paddingTop: height * 0.065,
+          backgroundColor: isDarkMode ? AppColors.dark : 'white',
+        } as any,
       ]}>
       <AppBar
         title="My Cards"
@@ -22,7 +27,7 @@ function MyCardsScreen({navigation}: any): React.JSX.Element {
         onPress={() => navigation.navigate('AddNewCard')}
       />
       <CardsContent />
-    </View>
+    </ScrollView>
   );
 }
 export default MyCardsScreen;
@@ -30,7 +35,5 @@ export default MyCardsScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 25,
-    paddingTop: 54,
   },
 });

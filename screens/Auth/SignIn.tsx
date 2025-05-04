@@ -1,4 +1,4 @@
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, useWindowDimensions, View} from 'react-native';
 import AuthTitle from '../../components/Auth/AuthTitle';
 import BackIcon from '../../components/BackIcon';
 import InputField from '../../components/Auth/InputFiled';
@@ -6,8 +6,9 @@ import AppButton from '../../components/AppButton';
 import RichText from '../../components/Auth/RichText';
 
 function SignInScreen({navigation}: any): React.JSX.Element {
+  const width = useWindowDimensions().width;
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {paddingHorizontal: width * 0.06}]}>
       <BackIcon />
       <AuthTitle>Sign In</AuthTitle>
       <InputField label="Email Address" leftIcon="email" />
@@ -30,7 +31,7 @@ export default SignInScreen;
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 25,
+    // paddingHorizontal: 25,
     marginTop: 54,
   },
   button: {

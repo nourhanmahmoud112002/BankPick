@@ -1,4 +1,4 @@
-import {StyleSheet, View} from 'react-native';
+import {ScrollView, StyleSheet, useWindowDimensions} from 'react-native';
 import {AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
 import AppImageBackground from '../../components/AppImageBackground';
@@ -9,11 +9,16 @@ import {useTheme} from '../../hooks/darkModeContext';
 
 function SendMoneyScreen(): React.JSX.Element {
   const {isDarkMode} = useTheme();
+  const {width, height} = useWindowDimensions();
   return (
-    <View
+    <ScrollView
       style={[
         styles.container,
-        {backgroundColor: isDarkMode ? AppColors.dark : 'white'} as any,
+        {
+          paddingHorizontal: width * 0.06,
+          paddingTop: height * 0.065,
+          backgroundColor: isDarkMode ? AppColors.dark : 'white',
+        } as any,
       ]}>
       <AppBar title="Send Money" />
       <AppImageBackground marginTop={32}>
@@ -21,14 +26,14 @@ function SendMoneyScreen(): React.JSX.Element {
         <SendMoneySection />
         <AppButton>Send Money</AppButton>
       </AppImageBackground>
-    </View>
+    </ScrollView>
   );
 }
 export default SendMoneyScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 25,
-    paddingTop: 54,
+    // paddingHorizontal: 25,
+    // paddingTop: 54,
   },
 });

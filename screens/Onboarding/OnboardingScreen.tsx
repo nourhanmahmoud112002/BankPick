@@ -1,10 +1,17 @@
-import {Animated, FlatList, StyleSheet, View} from 'react-native';
+import {
+  Animated,
+  FlatList,
+  StyleSheet,
+  useWindowDimensions,
+  View,
+} from 'react-native';
 import {OnboardingList} from '../../utils/Constants';
 import OnboardingItem from '../../components/onboarding/OnboardingItem';
 import {useRef, useState} from 'react';
 import AppButton from '../../components/AppButton';
 
 function OnboardingScreen({navigation}: any): React.JSX.Element {
+  const {width, height} = useWindowDimensions();
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const slideRef = useRef<FlatList<any>>(null);
@@ -52,7 +59,14 @@ function OnboardingScreen({navigation}: any): React.JSX.Element {
           viewabilityConfig={viewConfig}
           ref={slideRef}
         />
-        <View style={styles.button}>
+        <View
+          style={[
+            styles.button,
+            {
+              marginBottom: (height / 830) * 60,
+              paddingHorizontal: width * 0.06,
+            },
+          ]}>
           <AppButton onPress={handleNext}>Next</AppButton>
         </View>
       </View>
@@ -72,7 +86,5 @@ const styles = StyleSheet.create({
   button: {
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 20,
-    marginBottom: 60,
   },
 });
