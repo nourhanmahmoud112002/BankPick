@@ -39,8 +39,8 @@ function SignUpScreen({navigation}: any): React.JSX.Element {
           <View style={styles.button}>
             <AppButton
               onPress={async () => {
-                navigation.navigate('HomeWithBottomTab');
                 await storeData('isLoggedIn', 'true');
+                navigation.navigate('HomeWithBottomTab');
               }}>
               Sign Up
             </AppButton>

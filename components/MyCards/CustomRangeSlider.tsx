@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 4,
     borderColor: AppColors.primaryColor,
-    marginBottom: -6.5,
+    marginTop: 6.5,
   },
   label: {
     fontSize: 16,
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: 287,
+    width: '100%',
     position: 'relative',
     // marginTop: 10,
   },

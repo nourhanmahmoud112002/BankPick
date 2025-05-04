@@ -28,8 +28,8 @@ function SignInScreen({navigation}: any): React.JSX.Element {
         <View style={styles.button}>
           <AppButton
             onPress={async () => {
-              navigation.navigate('HomeWithBottomTab');
               await storeData('isLoggedIn', 'true');
+              navigation.navigate('HomeWithBottomTab');
             }}>
             Sign In
           </AppButton>
