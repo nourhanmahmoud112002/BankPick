@@ -11,16 +11,23 @@ import BackIcon from '../../components/BackIcon';
 import InputField from '../../components/Auth/InputFiled';
 import AppButton from '../../components/AppButton';
 import RichText from '../../components/Auth/RichText';
+import {AppColors} from '../../utils/AppColors';
+import {useTheme} from '../../hooks/darkModeContext';
 
 function SignUpScreen({navigation}: any): React.JSX.Element {
   const width = useWindowDimensions().width;
+  const {isDarkMode} = useTheme();
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.flex}
       keyboardVerticalOffset={50} // tweak this if needed
     >
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
+      <ScrollView
+        contentContainerStyle={[
+          styles.scrollContainer,
+          {backgroundColor: isDarkMode ? AppColors.dark : 'white'} as any,
+        ]}>
         <View style={[styles.container, {paddingHorizontal: width * 0.06}]}>
           <BackIcon />
           <AuthTitle>Sign Up</AuthTitle>

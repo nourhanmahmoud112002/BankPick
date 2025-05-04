@@ -1,4 +1,4 @@
-import {ScrollView, StyleSheet, useWindowDimensions} from 'react-native';
+import {ScrollView, StyleSheet, useWindowDimensions, View} from 'react-native';
 import {AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
 
@@ -14,19 +14,24 @@ function MyCardsScreen({navigation}: any): React.JSX.Element {
     <ScrollView
       style={[
         styles.container,
-        {
-          paddingHorizontal: width * 0.06,
-          paddingTop: height * 0.065,
-          backgroundColor: isDarkMode ? AppColors.dark : 'white',
-        } as any,
+        {backgroundColor: isDarkMode ? AppColors.dark : 'white'} as any,
       ]}>
-      <AppBar
-        title="My Cards"
-        icon={Icons.add}
-        imageWidth={15}
-        onPress={() => navigation.navigate('AddNewCard')}
-      />
-      <CardsContent />
+      <View
+        style={[
+          styles.container,
+          {
+            paddingHorizontal: width * 0.06,
+            paddingTop: height * 0.065,
+          } as any,
+        ]}>
+        <AppBar
+          title="My Cards"
+          icon={Icons.add}
+          imageWidth={15}
+          onPress={() => navigation.navigate('AddNewCard')}
+        />
+        <CardsContent />
+      </View>
     </ScrollView>
   );
 }

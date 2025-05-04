@@ -9,9 +9,12 @@ import {OnboardingList} from '../../utils/Constants';
 import OnboardingItem from '../../components/onboarding/OnboardingItem';
 import {useRef, useState} from 'react';
 import AppButton from '../../components/AppButton';
+import {AppColors} from '../../utils/AppColors';
+import {useTheme} from '../../hooks/darkModeContext';
 
 function OnboardingScreen({navigation}: any): React.JSX.Element {
   const {width, height} = useWindowDimensions();
+  const {isDarkMode} = useTheme();
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const slideRef = useRef<FlatList<any>>(null);
@@ -33,7 +36,11 @@ function OnboardingScreen({navigation}: any): React.JSX.Element {
   };
 
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        {backgroundColor: isDarkMode ? AppColors.dark : 'white'} as any,
+      ]}>
       <View style={styles.innerContainer}>
         <FlatList
           data={OnboardingList}

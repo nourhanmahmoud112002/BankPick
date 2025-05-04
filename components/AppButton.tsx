@@ -1,6 +1,7 @@
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, Pressable, StyleSheet, Text, View} from 'react-native';
 import {AppColors} from '../utils/AppColors';
 
+const width = Dimensions.get('window').width;
 function AppButton({children, onPress}: any): React.JSX.Element {
   return (
     <View style={styles.container}>
@@ -18,7 +19,7 @@ export default AppButton;
 
 const styles = StyleSheet.create({
   container: {
-    width: 335,
+    width: width > 300 ? 335 : 200,
     height: 56,
     borderRadius: 20,
     overflow: 'hidden',
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     fontWeight: '600',
-    fontFamily:'Poppins-Regular',
+    fontFamily: 'Poppins-Regular',
     color: 'white',
     textAlign: 'center',
     lineHeight: 24,

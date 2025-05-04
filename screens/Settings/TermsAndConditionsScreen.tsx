@@ -1,4 +1,4 @@
-import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, useWindowDimensions, View} from 'react-native';
 import {AppColors} from '../../utils/AppColors';
 import AppBar from '../../components/AppBar';
 import {TermsAndConditionsText} from '../../utils/Constants';
@@ -8,7 +8,8 @@ function TermsAndConditionsScreen(): React.JSX.Element {
   const {isDarkMode} = useTheme();
   const {width, height} = useWindowDimensions();
   return (
-    <View
+   <ScrollView style={styles.container}>
+     <View
       style={[
         styles.container,
         {
@@ -26,6 +27,7 @@ function TermsAndConditionsScreen(): React.JSX.Element {
         {TermsAndConditionsText}
       </Text>
     </View>
+   </ScrollView>
   );
 }
 export default TermsAndConditionsScreen;
