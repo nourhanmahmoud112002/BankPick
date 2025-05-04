@@ -1,7 +1,8 @@
 import {Animated, StyleSheet, View} from 'react-native';
 import {useRef, useEffect} from 'react';
 import {useTheme} from '../../hooks/darkModeContext';
-import { AppColors } from '../../utils/AppColors';
+import {AppColors} from '../../utils/AppColors';
+import {getData} from '../../utils/AsyncStorage';
 function SplashScreen({navigation}: any): React.JSX.Element {
   const {isDarkMode} = useTheme();
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -20,14 +21,23 @@ function SplashScreen({navigation}: any): React.JSX.Element {
         useNativeDriver: true,
       }),
     ]).start(() => {
-      setTimeout(() => {
-        navigation.replace('Onboarding');
+      setTimeout(async () => {
+        const isLoggedIn = await getData('isLoggedIn');
+        if (isLoggedIn) {
+          navigation.replace('HomeWithBottomTab');
+        } else {
+          navigation.replace('Onboarding');
+        }
       }, 4000);
     });
   }, [fadeAnim, scaleAnim, navigation]);
 
   return (
-    <View style={[styles.screen,{backgroundColor: isDarkMode ? AppColors.dark : 'white'} as any]}>
+    <View
+      style={[
+        styles.screen,
+        {backgroundColor: isDarkMode ? AppColors.dark : 'white'} as any,
+      ]}>
       <Animated.Image
         source={require('../../assets/images/SplashIcon.png')}
         style={[

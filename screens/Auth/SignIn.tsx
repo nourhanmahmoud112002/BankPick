@@ -6,6 +6,7 @@ import AppButton from '../../components/AppButton';
 import RichText from '../../components/Auth/RichText';
 import {useTheme} from '../../hooks/darkModeContext';
 import {AppColors} from '../../utils/AppColors';
+import {storeData} from '../../utils/AsyncStorage';
 
 function SignInScreen({navigation}: any): React.JSX.Element {
   const width = useWindowDimensions().width;
@@ -25,7 +26,11 @@ function SignInScreen({navigation}: any): React.JSX.Element {
         <InputField label="Email Address" leftIcon="email" />
         <InputField label="Password" leftIcon="password" rightIcon="eye" />
         <View style={styles.button}>
-          <AppButton onPress={() => navigation.navigate('HomeWithBottomTab')}>
+          <AppButton
+            onPress={async () => {
+              navigation.navigate('HomeWithBottomTab');
+              await storeData('isLoggedIn', 'true');
+            }}>
             Sign In
           </AppButton>
         </View>
