@@ -44,7 +44,7 @@ export default HomeCategorizeIcons;
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    marginTop: 62,
+    marginTop: 32,
     justifyContent: 'space-between', // OR 'space-evenly'
     alignItems: 'center',
   },

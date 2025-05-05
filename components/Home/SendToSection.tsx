@@ -79,7 +79,7 @@ export default SendToSection;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 400,
+    marginTop: 30,
     height: 140,
     justifyContent: 'center',
     borderRadius: 20,

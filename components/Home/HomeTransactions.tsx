@@ -1,38 +1,39 @@
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import {AppColors} from '../../utils/AppColors';
 import HomeTransactionsList from './HomeTransactionsList';
 import SectionTitle from '../SectionTitle';
 import {useNavigation} from '@react-navigation/native';
-import { useTransactionsList } from '../../data/appData';
+import {useTransactionsList} from '../../data/appData';
 
 function HomeTransactions(): React.JSX.Element {
   const navigation = useNavigation();
   const TransactionsList = useTransactionsList();
+
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <View style={styles.titleconstainer}>
-          <SectionTitle title="Transaction" />
-          <Text
-            style={styles.seeAllText}
-            onPress={() => {
-              navigation.navigate('TransactionHistory' as never);
-            }}>
-            See All
-          </Text>
-        </View>
-        <HomeTransactionsList data={TransactionsList} />
+    <ScrollView contentContainerStyle={styles.scrollContainer}>
+      <View style={styles.titleContainer}>
+        <SectionTitle title="Transaction" />
+        <Text
+          style={styles.seeAllText}
+          onPress={() => {
+            navigation.navigate('TransactionHistory' as never);
+          }}>
+          See All
+        </Text>
       </View>
+      <HomeTransactionsList data={TransactionsList} />
     </ScrollView>
   );
 }
 
 export default HomeTransactions;
+
 const styles = StyleSheet.create({
-  container: {
+  scrollContainer: {
+    paddingBottom: 20,
     marginTop: 28,
   },
-  titleconstainer: {
+  titleContainer: {
     justifyContent: 'space-between',
     flexDirection: 'row',
   },

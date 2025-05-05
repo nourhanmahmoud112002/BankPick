@@ -22,11 +22,10 @@ function SendMoneyScreen(): React.JSX.Element {
           } as any,
         ]}>
         <AppBar title="Send Money" />
-        <AppImageBackground marginTop={32}>
-          <SendToSection />
-          <SendMoneySection />
-          <AppButton>Send Money</AppButton>
-        </AppImageBackground>
+        <AppImageBackground marginTop={32} />
+        <SendToSection />
+        <SendMoneySection />
+        <AppButton>Send Money</AppButton>
       </View>
     </ScrollView>
   );

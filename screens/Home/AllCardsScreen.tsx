@@ -5,11 +5,8 @@ import AppImageBackground from '../../components/AppImageBackground';
 
 import AppButton from '../../components/AppButton';
 import {useTheme} from '../../hooks/darkModeContext';
-import {useIcons} from '../../utils/AppIcons';
-
 function AllCardsScreen({navigation}: any): React.JSX.Element {
   const {isDarkMode} = useTheme();
-  const Icons = useIcons();
   const {width, height} = useWindowDimensions();
   return (
     <View
@@ -22,7 +19,7 @@ function AllCardsScreen({navigation}: any): React.JSX.Element {
         } as any,
       ]}>
       <AppBar title="All Cards" />
-      <AppImageBackground marginTop={32} image={Icons.allCards} />
+      <AppImageBackground marginTop={32}/>
       <View style={{marginTop: height * 0.06}}>
         <AppButton onPress={() => navigation.navigate('AddNewCard')}>
           Add New Card +

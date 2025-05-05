@@ -5,7 +5,8 @@ import InputField from '../Auth/InputFiled';
 
 function AddNewCardContent(): React.JSX.Element {
   return (
-    <AppImageBackground marginTop={32}>
+    <View>
+      <AppImageBackground marginTop={32} />
       <View style={styles.contentContainer}>
         <InputField
           label="Cardholder Name"
@@ -27,7 +28,7 @@ function AddNewCardContent(): React.JSX.Element {
           defaultValue="4562 1122 4595 7852"
         />
       </View>
-    </AppImageBackground>
+    </View>
   );
 }
 export default AddNewCardContent;
@@ -35,7 +36,7 @@ export default AddNewCardContent;
 const styles = StyleSheet.create({
   contentContainer: {
     width: '100%',
-    paddingTop: 290,
+    paddingTop: 30,
   },
   innerContainer: {
     flexDirection: 'row',

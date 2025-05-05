@@ -5,19 +5,24 @@ import AppImageBackground from '../AppImageBackground';
 
 function HomeContent(): React.JSX.Element {
   return (
-    <AppImageBackground>
-      <View style={styles.homeCategorizeContainer}>
+    <View style={styles.container}>
+      <AppImageBackground />
+      <View style={styles.contentWrapper}>
         <HomeCategorizeIcons />
         <HomeTransactions />
       </View>
-    </AppImageBackground>
+    </View>
   );
 }
+
 export default HomeContent;
 
 const styles = StyleSheet.create({
-  homeCategorizeContainer: {
+  container: {
+    flex: 1,
+  },
+  contentWrapper: {
+    flex: 1,
     width: '100%',
-    paddingTop: 240,
   },
 });
