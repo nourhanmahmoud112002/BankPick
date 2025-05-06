@@ -20,7 +20,6 @@ function MyCardsScreen({navigation}: any): React.JSX.Element {
         style={[
           styles.container,
           {
-            paddingHorizontal: width * 0.06,
             paddingTop: height * 0.065,
           } as any,
         ]}>
@@ -28,8 +27,10 @@ function MyCardsScreen({navigation}: any): React.JSX.Element {
           title="My Cards"
           icon={Icons.add}
           imageWidth={15}
+          paddingHorizontal={width * 0.06}
           onPress={() => navigation.navigate('AddNewCard')}
         />
+
         <CardsContent />
       </View>
     </ScrollView>

@@ -12,12 +12,12 @@ function AddNewCardScreen(): React.JSX.Element {
       style={[
         styles.container,
         {
-          paddingHorizontal: width * 0.06,
+          // paddingHorizontal: width * 0.06,
           paddingTop: height * 0.065,
           backgroundColor: isDarkMode ? AppColors.dark : 'white',
         } as any,
       ]}>
-      <AppBar title="Add New Card" />
+      <AppBar title="Add New Card" paddingHorizontal={width * 0.06} />
       <AddNewCardContent />
     </View>
   );

@@ -1,13 +1,17 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, useWindowDimensions, View} from 'react-native';
 import AppImageBackground from '../AppImageBackground';
 import InputField from '../Auth/InputFiled';
+import AppOverlayBackImage from '../AppOverlayBackImage';
 
 function AddNewCardContent(): React.JSX.Element {
+  const {width} = useWindowDimensions();
   return (
     <View>
       <AppImageBackground marginTop={32} />
-      <View style={styles.contentContainer}>
+      <AppOverlayBackImage marginTop={30}/>
+      <View
+        style={[styles.contentContainer, {paddingHorizontal: width * 0.06}]}>
         <InputField
           label="Cardholder Name"
           leftIcon="user"

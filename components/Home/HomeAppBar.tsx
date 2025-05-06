@@ -1,17 +1,18 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
 import CircularImage from '../CircularImage';
 import {AppColors} from '../../utils/AppColors';
 import Icon from '../Icon';
 import {useNavigation} from '@react-navigation/native';
 import {useTheme} from '../../hooks/darkModeContext';
-import { useIcons } from '../../utils/AppIcons';
+import {useIcons} from '../../utils/AppIcons';
 
 function HomeAppBar(): React.JSX.Element {
   const navigation = useNavigation();
   const {isDarkMode} = useTheme();
-   const Icons = useIcons();
+  const {width} = useWindowDimensions();
+  const Icons = useIcons();
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {paddingHorizontal: width * 0.06}]}>
       <CircularImage image={require('../../assets/images/userImage.png')} />
       <View style={styles.textContainer}>
         <Text style={styles.welcomeText}>Welcome back,</Text>

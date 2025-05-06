@@ -2,10 +2,10 @@ import {StyleSheet, Text, View} from 'react-native';
 import BackIcon from './BackIcon';
 import Icon from './Icon';
 import {useTheme} from '../hooks/darkModeContext';
-function AppBar({title, icon, onPress, imageWidth}: any): React.JSX.Element {
+function AppBar({title, icon, onPress, imageWidth ,paddingHorizontal}: any): React.JSX.Element {
   const {isDarkMode} = useTheme();
   return (
-    <View style={styles.constainer}>
+    <View style={[styles.constainer,{paddingHorizontal:paddingHorizontal}]}>
       <BackIcon />
       <Text
         style={[styles.text, {color: isDarkMode ? 'white' : 'black'} as any]}>

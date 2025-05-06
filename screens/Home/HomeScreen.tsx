@@ -6,13 +6,13 @@ import {useTheme} from '../../hooks/darkModeContext';
 
 function HomeScreen(): React.JSX.Element {
   const {isDarkMode} = useTheme();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const {width, height} = useWindowDimensions();
   return (
     <View
       style={[
         styles.container,
         {
-          paddingHorizontal: width * 0.06,
           paddingTop: height * 0.065,
           backgroundColor: isDarkMode ? AppColors.dark : 'white',
         } as any,

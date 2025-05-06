@@ -5,6 +5,7 @@ import AppImageBackground from '../../components/AppImageBackground';
 
 import AppButton from '../../components/AppButton';
 import {useTheme} from '../../hooks/darkModeContext';
+import AppOverlayBackImage from '../../components/AppOverlayBackImage';
 function AllCardsScreen({navigation}: any): React.JSX.Element {
   const {isDarkMode} = useTheme();
   const {width, height} = useWindowDimensions();
@@ -13,14 +14,14 @@ function AllCardsScreen({navigation}: any): React.JSX.Element {
       style={[
         styles.container,
         {
-          paddingHorizontal: width * 0.06,
           paddingTop: height * 0.065,
           backgroundColor: isDarkMode ? AppColors.dark : 'white',
         } as any,
       ]}>
-      <AppBar title="All Cards" />
-      <AppImageBackground marginTop={32}/>
-      <View style={{marginTop: height * 0.06}}>
+      <AppBar title="All Cards" paddingHorizontal={width * 0.06} />
+      <AppImageBackground marginTop={32} />
+      <AppOverlayBackImage marginTop={100} />
+      <View style={{marginTop: height * 0.06, paddingHorizontal: width * 0.06}}>
         <AppButton onPress={() => navigation.navigate('AddNewCard')}>
           Add New Card +
         </AppButton>
