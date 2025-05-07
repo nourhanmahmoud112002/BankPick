@@ -5,6 +5,7 @@ export const getData = async () => {
   try {
     const response = await axios.get(url);
     return response.data;
+    // return [];
   } catch (e) {
     console.log(e);
   }

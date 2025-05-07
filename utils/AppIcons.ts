@@ -76,6 +76,6 @@ export const useIcons = () => {
     yakub: require('../assets/images/users/Yakub.png'),
     ymilate: require('../assets/images/users/Ymilate.png'),
     bluePlus: require('../assets/images/blueplus.png'),
-    emptyTrans: require('../assets/images/emptyTrans.jpg'),
+    // emptyTrans: require('../assets/images/emptyTrans.jpg'),
   };
 };

@@ -4,11 +4,11 @@ import HomeTransactionsList from './HomeTransactionsList';
 import SectionTitle from '../SectionTitle';
 import {useNavigation} from '@react-navigation/native';
 import {useTransactionsList} from '../../data/appData';
+import EmptyTransaction from './EmptyTransaction';
 
 function HomeTransactions(): React.JSX.Element {
   const navigation = useNavigation();
   const TransactionsList = useTransactionsList();
-
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.titleContainer}>
@@ -21,7 +21,10 @@ function HomeTransactions(): React.JSX.Element {
           See All
         </Text>
       </View>
-      <HomeTransactionsList data={TransactionsList} />
+      {TransactionsList.length === 0 && <EmptyTransaction />}
+      {TransactionsList.length > 0 && (
+        <HomeTransactionsList data={TransactionsList} />
+      )}
     </ScrollView>
   );
 }
