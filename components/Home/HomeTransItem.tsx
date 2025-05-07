@@ -9,21 +9,28 @@ function HomeTransItem({item}: any): React.JSX.Element {
   return (
     <View style={styles.container}>
       <View style={styles.leftSection}>
-        <Icon width={42} icon={item.iconName} />
+        <Icon
+          width={42}
+          icon={
+            isDarkMode
+              ? {uri: item.CompanyImageDark}
+              : {uri: item.CompanyImageLight}
+          }
+        />
         <View style={styles.textContainer}>
           <Text
             style={[
               styles.titleText,
               {color: isDarkMode ? 'white' : 'black'} as any,
             ]}>
-            {item.title}
+            {item.CompanyName}
           </Text>
-          <Text style={styles.categoryText}>{item.category}</Text>
+          <Text style={styles.categoryText}>{item.CompanyCategory}</Text>
         </View>
       </View>
       <Text
         style={[styles.money, {color: isDarkMode ? 'white' : 'black'} as any]}>
-        {item.money}
+        {item.CompanyValue}
       </Text>
     </View>
   );

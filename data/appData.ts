@@ -1,97 +1,24 @@
+import {useEffect, useState} from 'react';
 import {useIcons} from '../utils/AppIcons';
+import {getData} from './getData';
 export const useTransactionsList = () => {
-  const Icons = useIcons();
-  return [
-    {
-      id: '1',
-      iconName: Icons.apple,
-      title: 'Apple Store',
-      category: 'Entertainment',
-      money: '- $5.99',
-    },
-    {
-      id: '2',
-      iconName: Icons.spotify,
-      title: 'Spotify',
-      category: 'Music',
-      money: '- $12.99',
-    },
-    {
-      id: '3',
-      iconName: Icons.download,
-      title: 'Money Transfer',
-      category: 'Transaction',
-      money: '$300',
-    },
-    {
-      id: '4',
-      iconName: Icons.grocery,
-      title: 'Grocery',
-      category: 'Shopping',
-      money: '- $88',
-    },
-  ];
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    getData().then(res => {
+      const filtered = res.filter((item: any) => Number(item.id) <= 4);
+      setData(filtered);
+    });
+  }, []);
+  return data;
 };
 export const useTransactionsHistoryList = () => {
-  const Icons = useIcons();
-  return [
-    {
-      id: '1',
-      iconName: Icons.apple,
-      title: 'Apple Store',
-      category: 'Entertainment',
-      money: '- $5.99',
-    },
-    {
-      id: '2',
-      iconName: Icons.spotify,
-      title: 'Spotify',
-      category: 'Music',
-      money: '- $12.99',
-    },
-    {
-      id: '3',
-      iconName: Icons.download,
-      title: 'Money Transfer',
-      category: 'Transaction',
-      money: '$300',
-    },
-    {
-      id: '4',
-      iconName: Icons.grocery,
-      title: 'Grocery',
-      category: 'Shopping',
-      money: '- $88',
-    },
-    {
-      id: '5',
-      iconName: Icons.apple,
-      title: 'Apple Store',
-      category: 'Entertainment',
-      money: '- $5.99',
-    },
-    {
-      id: '6',
-      iconName: Icons.spotify,
-      title: 'Spotify',
-      category: 'Music',
-      money: '- $12.99',
-    },
-    {
-      id: '7',
-      iconName: Icons.download,
-      title: 'Money Transfer',
-      category: 'Transaction',
-      money: '$300',
-    },
-    {
-      id: '8',
-      iconName: Icons.grocery,
-      title: 'Grocery',
-      category: 'Shopping',
-      money: '- $88',
-    },
-  ];
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    getData().then(res => {
+      setData(res);
+    });
+  }, []);
+  return data;
 };
 
 export const useLanguagesList = () => {
