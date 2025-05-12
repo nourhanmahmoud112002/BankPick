@@ -25,8 +25,8 @@ function TransactionHistoryScreen(): React.JSX.Element {
       ]}>
       <AppBar title="Transaction History" icon={Icons.refresh} />
       <View style={styles.innerConatiner}>
-        {TransactionsHistoryList.length === 0 && <EmptyTransaction />}
-        {TransactionsHistoryList.length > 0 && (
+        {TransactionsHistoryList?.length === 0 && <EmptyTransaction />}
+        {TransactionsHistoryList?.length > 0 && (
           <>
             <SectionTitle title="Today" />
             <HomeTransactionsList data={TransactionsHistoryList} />

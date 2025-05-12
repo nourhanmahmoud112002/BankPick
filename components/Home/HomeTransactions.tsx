@@ -21,8 +21,8 @@ function HomeTransactions(): React.JSX.Element {
           See All
         </Text>
       </View>
-      {TransactionsList.length === 0 && <EmptyTransaction />}
-      {TransactionsList.length > 0 && (
+      {TransactionsList?.length === 0 && <EmptyTransaction />}
+      {TransactionsList?.length > 0 && (
         <HomeTransactionsList data={TransactionsList} />
       )}
     </ScrollView>

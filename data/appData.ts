@@ -1,23 +1,20 @@
-import {useEffect, useState} from 'react';
 import {useIcons} from '../utils/AppIcons';
 import {getData} from './getData';
+import {useQuery} from '@tanstack/react-query';
 export const useTransactionsList = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    getData().then(res => {
-      const filtered = res.filter((item: any) => Number(item.id) <= 4);
-      setData(filtered);
-    });
-  }, []);
-  return data;
+  const {data} = useQuery({
+    queryKey: ['filtered-transactions'],
+    queryFn: () => getData(),
+  });
+  const filteredData =
+    data?.length > 0 ? data.filter((item: any) => Number(item.id) <= 4) : [];
+  return filteredData;
 };
 export const useTransactionsHistoryList = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    getData().then(res => {
-      setData(res);
-    });
-  }, []);
+  const {data} = useQuery({
+    queryKey: ['transactions'],
+    queryFn: () => getData(),
+  });
   return data;
 };
 
